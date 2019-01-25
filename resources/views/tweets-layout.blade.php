@@ -39,7 +39,26 @@
             <a href="/posts/{{$singletweet->id}}">
             {{ $singletweet->tweets }}</a>
             - by {{ $singletweet->user_id }}
-            <br / ><br />
+            <br / >
+
+        <div class="row">
+            <div class="col-md-4">
+                <form method="post" action="/posts">
+                    @csrf
+                    <textarea class="form-control tweet-box"
+                    name="comment" placeholder="comments on this tweet"></textarea>
+                    <br />
+                    <input type="hidden" name="user_id" value="{{$singletweet->user_id}}"/>
+                    <input type="hidden" name="tweet_id" value="{{$singletweet->id}}"/>
+
+                    <button class="btn btn-success btn-sm">Post</button>
+                </form>
+            </div>
+        </div>
+
+
+
+            <br /><br /><br /><br />
         @endforeach
 
        @section('heading-extra')

@@ -1,8 +1,4 @@
 @php
-    //var_dump($tweet);
+    //var_dump($tweets);
 
 @endphp
-
-{{ $tweet->tweets }}<br />
- -
-written by user {{ $tweet->user_id }}
