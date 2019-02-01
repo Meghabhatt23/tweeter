@@ -1,53 +1,66 @@
+@extends('layouts.landing-layout')
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Tweeter</title>
-        <link rel="stylesheet" type="text/css" href="{{URL::asset('../css/tweeter.css')}}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css' integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/' crossorigin='anonymous'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    </head>
+@section('content')
 
-    <body>
-        @yield('pages-content')
-        <div class="split left">
-            <div class="centered">
-                <div class="left-side">
-            <i class="fa fa-search" aria-hidden="true"></i>
-                <p>Follow your interests.</p>
-            <i class="fa fa-user-plus" style="font-size:30px;color:whitr"></i>
-                <p>Hear what people are talking about</p>
-            <i style='font-size:24px' class='far'>&#xf075;</i>
-                <p>Join the conversation.</p>
-                </div>
+<div class="row">
+
+    <div class="col-sm-6 home-page">
+
+        <div class="col-offset-md-3">
+            <h2>Follow your inteerst</h2>
+            <h2>Hear what people are talking about</h2>
+            <h2>join the Conversatation</h2>
+        </div>
+    </div>
+
+
+        <div class="col-sm-6 home-page-right">
+
+            <div class="col-md-3">
+                <img src="images/tweeter-logo.png" alt="logo" title="logo/">
             </div>
-    </div>
 
-    <div class="split right">
-        <div class="centered">
-      <div class="fa fa-twitter"></div>
-            <h1> See what’s happening in the world right now</h1>
-            <h2> Join Twitter today.</h2>
-      </div>
+            <div class="col-md-9">
 
+                <form method="get" action="login">
+                    <button class="btn btn-white">Login</button>
+                </form>
+            </div>
 
-    <div class="button">
-        <a href="#">Sign up</a>
-        <br>
-        <a href="#">Log in</a>
-    </div>
+                <h1>What's happening in the world right now</h1>
+                    <br/>
+                <h3>Join Tweeter today</h3>
+                    <br />
 
-    <div class="footer">
-        <p>footer</p>
-    </div>
+                    <form method="get" action="login">
+                        <button class="btn btn-white btn-full-width">Login</button>
+                    </form>
 
-    </div>
+                    <form method="get" action="register">
+                        <button class="btn btn-white btn-full-width">Signup</button>
+                    </form>
 
-           @include('partials.footer')
-
-</body>
-</html>
+            </div>
+</div>
+<div class="StreamsFooter StreamsFooter--fixed">
+    <ul class="StreamsFooter-list u-cf">
+        <li class="StreamsFooter-item"><a href="" rel="noopener">About</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Help Center</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Blog</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Status</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Jobs</a></li>
+        <li class="StreamsFooter-item"><a href="Terms" rel="noopener">Terms</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Privacy Policy</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Cookies</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Ads info</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Brand</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Apps</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Advertise</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Marketing</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Businesses</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Developers</a></li>
+        <li class="StreamsFooter-item"><a href="profiles" rel="noopener">Directory</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Settings</a></li>
+        <li class="StreamsFooter-item StreamsFooter-copyright">&copy; 2019 Twitter</li>
+    </ul>
+</div>

@@ -1,16 +1,26 @@
-<div class="container-fluid footer-section">
-   <footer class="footer">
-       <div class="footer-section col-xs-12">
-           <p class="text-muted copyright-footer-text">Copyright 2019 © Fake Tweeter. All rights reserved.</p>
-       </div>
-       <div class="pull-center social-media-section">
-           <a href=""><i class="fa fa-2x fa-google"></i></a>
-           <a href=""><i class="fa fa-2x fa-twitter"></i></a>
-           <a href=""><i class="fa fa-2x fa-instagram"></i></a>
-           <a href=""><i class="fa fa-2x fa-linkedin"></i></a>
-           <a href=""><i class="fa fa-2x fa-pinterest"></i></a>
-           <a href=""><i class="fa fa-2x fa-youtube"></i></a>
-           <a href=""><i class="fa fa-2x fa-facebook"></i></a>
-       </div>
-   </footer>
+@section('footer')
+
+
+<div class="StreamsFooter StreamsFooter--fixed">
+    <ul class="StreamsFooter-list u-cf">
+        <li class="StreamsFooter-item"><a href="" rel="noopener">About</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Help Center</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Blog</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Status</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Jobs</a></li>
+        <li class="StreamsFooter-item"><a href="Terms" rel="noopener">Terms</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Privacy Policy</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Cookies</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Ads info</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Brand</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Apps</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Advertise</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Marketing</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Businesses</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Developers</a></li>
+        <li class="StreamsFooter-item"><a href="profiles" rel="noopener">Directory</a></li>
+        <li class="StreamsFooter-item"><a href="" rel="noopener">Settings</a></li>
+        <li class="StreamsFooter-item StreamsFooter-copyright">&copy; 2019 Twitter</li>
+    </ul>
 </div>
+@endsection

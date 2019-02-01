@@ -1,0 +1,38 @@
+.home-page {
+  background-image: url("../images/twtbg1.png");
+  color: white;
+  background-color: #1da1f2;
+  padding: 120px 300px; }
+  .home-page h2 {
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-align: left;
+    margin-left: 150px; }
+
+.home-page-right {
+  padding-top: 40px;
+  background-color: yellow; }
+  .home-page-right img {
+    max-width: 80px; }
+  .home-page-right top-row button {
+    text-align: right; }
+  .home-page-right h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center; }
+  .home-page-right h3 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center; }
+  .home-page-right .btn-full-width {
+    width: 80%;
+    color: black;
+    background-color: #1da1f2;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    margin-left: 50px; }
+
+header {
+  font-size: 20px;
+  color: blue;
+  border-bottom: 1px solid #ccc; }

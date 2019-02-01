@@ -18,6 +18,9 @@ Route::get('/', function () {
 // Route::get('about', function () {
     // return view('about');
 // });
+Route::get('/home', function () {
+    return view('home');
+});
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -69,3 +72,7 @@ Route::get('user/{user_id}','UsersController@getOtherUser');
 //Route::get('/tasks/{task}','TaskController@show');
 
 Route::get('user-followers','usersController@usesrFollowers');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

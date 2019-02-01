@@ -1,10 +1,7 @@
 @extends('layout')
 
 @section('pages-content')
-<?php
-$username="";
-$password="";
-?>
+
 <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
 
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
