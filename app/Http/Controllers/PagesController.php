@@ -9,7 +9,7 @@ class PagesController extends Controller
     public function index(){
         return view('index');
     }
-    public function index(){
+    public function home(){
         return view('home');
     }
     public function about(){

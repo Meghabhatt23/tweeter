@@ -43,7 +43,7 @@
 
         <div class="row">
             <div class="col-md-4">
-                <form method="post" action="/posts">
+                <form method="post" action="/posts/comment">
                     @csrf
                     <textarea class="form-control tweet-box"
                     name="comment" placeholder="comments on this tweet"></textarea>

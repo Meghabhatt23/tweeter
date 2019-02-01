@@ -1,3 +1,4 @@
+
 @extends('layouts.landing-layout')
 
 @section('content')
@@ -14,6 +15,7 @@
     </div>
 
 
+
         <div class="col-sm-6 home-page-right">
 
             <div class="col-md-3">
@@ -23,7 +25,7 @@
             <div class="col-md-9">
 
                 <form method="get" action="login">
-                    <button class="btn btn-white">Login</button>
+                    <button class="btn btn-round">Login</button>
                 </form>
             </div>
 
