@@ -44,25 +44,34 @@
 
             </div>
 </div>
-<div class="StreamsFooter StreamsFooter--fixed">
-    <ul class="StreamsFooter-list u-cf">
-        <li class="StreamsFooter-item"><a href="" rel="noopener">About</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Help Center</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Blog</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Status</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Jobs</a></li>
-        <li class="StreamsFooter-item"><a href="Terms" rel="noopener">Terms</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Privacy Policy</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Cookies</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Ads info</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Brand</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Apps</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Advertise</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Marketing</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Businesses</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Developers</a></li>
-        <li class="StreamsFooter-item"><a href="profiles" rel="noopener">Directory</a></li>
-        <li class="StreamsFooter-item"><a href="" rel="noopener">Settings</a></li>
-        <li class="StreamsFooter-item StreamsFooter-copyright">&copy; 2019 Twitter</li>
-    </ul>
+
+<div class="panel-footer">
+<a href="posts">
+<span class="glyphicon glyphicon-user"></span>
+Find people you know
+</a>
+</div>
+</div>
+<div class="well well-sm">
+<ul class="list-inline">
+<li>© 2019 Twitter</li>
+<li><a href="#">About</a></li>
+<li><a href="#">Help</a></li>
+<li><a href="#">Terms</a></li>
+<li><a href="#">Privacy</a></li>
+<li><a href="#">Cookies</a></li>
+<li><a href="#">Ads info</a></li>
+<li><a href="#">Brand</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Status</a></li>
+<li><a href="#">Apps</a></li>
+<li><a href="#">Jobs</a></li>
+<li><a href="#">Advertise</a></li>
+<li><a href="#">Businesses</a></li>
+<li><a href="#">Media</a></li>
+<li><a href="#">Developers</a></li>
+</ul>
+</div>
+</div>
+</div>
 </div>

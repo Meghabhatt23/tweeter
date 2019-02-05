@@ -12,7 +12,7 @@
 
     </head>
     <body>
-
+<div class="StaticLoggedOutHomePage-cell StaticLoggedOutHomePage-utilityBlock" style="max-width:612px;">
         <br /><br /><br />
         <div class="container-fluid">
 
