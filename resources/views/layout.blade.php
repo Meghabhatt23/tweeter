@@ -1,4 +1,5 @@
 
+
 @extends('layouts.landing-layout')
 
 @section('content')
@@ -44,34 +45,24 @@
 
             </div>
 </div>
-
-<div class="panel-footer">
-<a href="posts">
-<span class="glyphicon glyphicon-user"></span>
-Find people you know
-</a>
-</div>
-</div>
-<div class="well well-sm">
-<ul class="list-inline">
-<li>© 2019 Twitter</li>
-<li><a href="#">About</a></li>
-<li><a href="#">Help</a></li>
-<li><a href="#">Terms</a></li>
-<li><a href="#">Privacy</a></li>
-<li><a href="#">Cookies</a></li>
-<li><a href="#">Ads info</a></li>
-<li><a href="#">Brand</a></li>
-<li><a href="#">Blog</a></li>
-<li><a href="#">Status</a></li>
-<li><a href="#">Apps</a></li>
-<li><a href="#">Jobs</a></li>
-<li><a href="#">Advertise</a></li>
-<li><a href="#">Businesses</a></li>
-<li><a href="#">Media</a></li>
-<li><a href="#">Developers</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
+        <footer>
+            <ul>
+                <li><a href="">About</a></li>
+                <li>Help Center</li>
+                <li>Blog</li>
+                <li>Status</li>
+                <li>Jobs</li>
+                <li>Terms</li>
+                <li>Privacy Policy</li>
+                <li>Cookies</li>
+                <li>Apps</li>
+                <li>Marketing</li>
+                <li>Advertise</li>
+                <li>Developers</li>
+                <li>Ads Info</li>
+                <li>Brands</li>
+                <li>Business</li>
+                <li>Directory</li>
+                <li>&copy<?php echo date("Y"); ?> Tweeter </li>
+            </ul>
+        </footer>

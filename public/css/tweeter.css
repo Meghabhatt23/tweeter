@@ -1,8 +1,6 @@
 body {
-  margin: 0; }
-
-* {
-  font-family: "Segoe UI",Arial,sans-serif; }
+  margin: 0;
+  padding: 0; }
 
 .navbar-laravel {
   height: 46px;
@@ -98,17 +96,29 @@ body {
 .single-comment {
   padding: 10px 5px; }
 
-.fakeimg {
-  height: 50px;
-  width: 50px;
-  background: #aaa; }
-
-.panel-footer {
-  color: red; }
-  .panel-footer ul {
-    text-align: center; }
-  .panel-footer li {
-    display: inline; }
+footer {
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7%; }
+  footer ul {
+    text-align: left;
+    margin-top: 1%;
+    margin: 0;
+    padding-top: 1%; }
+    footer ul li {
+      color: #66757F;
+      font-size: 13px;
+      padding-right: 1%;
+      display: inline; }
+      footer ul li a:link {
+        color: #66757F; }
+      footer ul li a:visited {
+        color: #66757F; }
+      footer ul li a:hover {
+        color: #66757F; }
 
 .h7 {
   font-size: 0.8rem; }

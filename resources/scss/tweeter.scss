@@ -1,8 +1,6 @@
 body{
     margin: 0;
-}
-*{
-    font-family: "Segoe UI",Arial,sans-serif;
+    padding: 0;
 }
 .navbar-laravel{
 height: 46px;
@@ -117,18 +115,36 @@ width: 100%;
 .single-comment{
     padding: 10px 5px;
 }
-.fakeimg {
-  height: 50px;
-  width: 50px;
-  background: #aaa;
-}
-.panel-footer{
-    color:red;
-    ul{
-        text-align: center;
-    }
-    li{
-        display: inline;
+
+footer{
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    width:100%;
+    height:7%;
+
+      ul{
+          text-align: left;
+          margin-top: 1%;
+          margin: 0;
+          padding-top: 1%;
+        li{
+            color:#66757F;
+            font-size: 13px;
+            padding-right: 1%;
+            display: inline;
+            a:link{
+                color:#66757F;
+            }
+            a:visited{
+                color:#66757F;
+            }
+            a:hover{
+                color:#66757F;
+            }
+        }
+
     }
 }
 

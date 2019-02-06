@@ -9,7 +9,7 @@
                 <img class="profile-icon" src="images/profile-icon.png" alt="profile /">
             </div>
         </div>
-        <div class="col-xs-9 col-md-10">
+        <div class="col-sm-6 col-md-12">
             <form name="comment-form" method="post" action="comment">
                 @csrf
                 <textarea name="comment" class="form-control" placeholder="comment here"></textarea>
