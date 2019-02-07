@@ -3,10 +3,12 @@
     <div class="col-xs-12">
     </div>
 
-    <div class="row">
 
-        <div class="col-sm-6 col-md-12">
-            <form name="comment-form" method="post" action="comment">
+
+
+    <div class="row">
+        <div class="col-...">
+         <form name="comment-form" method="post" action="comment" style="textalign: right;">
                 @csrf
                 <textarea name="comment" class="form-control" placeholder="comment here"></textarea>
                 <br />
@@ -16,5 +18,5 @@
                 </div>
             </form>
         </div>
-   </div>
+    </div>
 </div>

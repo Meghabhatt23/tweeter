@@ -120,6 +120,9 @@ footer {
       footer ul li a:hover {
         color: #66757F; }
 
+#comment-form {
+  text-align: right; }
+
 .h7 {
   font-size: 0.8rem; }
 

@@ -74,7 +74,7 @@
 
                                     <textarea name="tweet" class="form-control" placeholder="what's happening?"></textarea>
                                     <br />
-                                    {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" /> --}}
+                                    <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />
                                     <div class="align-right">
                                         <button class="btn btn-twitter btn smalign-right">Tweet</button>
                                     </div>
@@ -89,7 +89,7 @@
                                  ?>
                                  <?php } ?>
                             </div>
-                            
+
                         </div>
 
                     </div>

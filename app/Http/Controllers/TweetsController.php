@@ -30,8 +30,8 @@ class TweetsController extends Controller
       $tweet = new Tweet;
       $tweets = $tweet->get();
 
-     $tweetCollection = array();
-     foreach ($tweets as $tweet) {
+        $tweetCollection = array();
+        foreach ($tweets as $tweet) {
          $newTweet = $tweet;
          $comments = Tweet::find($tweet->id)->comments;
          $newTweet['comments'] = $comments;
@@ -44,16 +44,17 @@ class TweetsController extends Controller
   public function saveTweet(Request $request){
       $user = Auth::user();
       $tweet = new Tweet;
+      $tweet ->user_id=2;
       $tweet ->tweets = $request->tweet;
       $tweet -> save();
-      return redirect('home');
+      return redirect('home') ;
 }
   public function saveComment(Request $request){
       $user = Auth::user();
-      $comment = new Comment;
+      $comment = new Comments;
       $comment ->user_id = $user->id;
       $comment ->tweet_id = $request->tweet;
-      $tweet -> save();
+      $tweets -> save();
       return redirect('home');
 }
 }
