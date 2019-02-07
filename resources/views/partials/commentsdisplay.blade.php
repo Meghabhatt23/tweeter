@@ -4,11 +4,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xs-2 col-md-2">
-            <div class="images-container">
-                <img class="profile-icon" src="images/profile-icon.png" alt="profile /">
-            </div>
-        </div>
+
         <div class="col-sm-6 col-md-12">
             <form name="comment-form" method="post" action="comment">
                 @csrf
@@ -20,3 +16,5 @@
                 </div>
             </form>
         </div>
+   </div>
+</div>
