@@ -21,16 +21,13 @@
 
 
 
-Auth::routes();
+
 
 Route::get('/', function () {
     return view('index');
 });
+Auth::routes();
 
 Route::get('/home', 'TweetsController@index')->name('tweets');
-Route::get('/tweet', 'TweetsController@saveTweet')->name('savetweet');
-Route::get('/comment', 'TweetsController@saveComment')->name('saveComments');
-
-Route::post('/home', 'TweetsController@index')->name('tweets');
 Route::post('/tweet', 'TweetsController@saveTweet')->name('savetweet');
-Route::post('/comment', 'TweetsController@saveComment')->name('saveComments');
+Route::post('/comment', 'TweetsController@saveComment')->name('savecomment');
