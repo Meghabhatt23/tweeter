@@ -38,13 +38,13 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <div class="mr-2">
-                            <img class="rounded-circle" width="70" src="https://picsum.photos/50/50" alt="">
+                         <div class="mr-2" style="background-color: #1da1f2; color:white;">
+                            <img class="rounded-circle" width="70" src="images/profile.png" alt="">
                         </div>
                         <div class="h5">@MeghaBhatt</div>
 
-                        <div class="h7">Believe in youself.
-
+                        <div class="h7" style="font-weight:bold;">
+                            Believe in youself..!!
                         </div>
                     </div>
                     <ul class="list-group list-group-flush">
@@ -76,13 +76,13 @@
                                     <br />
                                     {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />  --}}
                                     <div class="align-right">
-                                        <button class="btn btn-twitter btn align-right">Tweet</button>
+                                        <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Tweet</button>
                                     </div>
                                 </form>
                                 <?php
                                     if(isset($tweets) && ($tweets!==null)){
                                 ?>
-                                @include('partials.tweetsdisplay')
+                                @include('partials.showtweets')
                                 <?php
                                 }
                                 else{

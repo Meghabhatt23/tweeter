@@ -22,7 +22,7 @@
                 </div>
             </div>
 </div>
-                    @include('partials.commentsdisplay')
+                    @include('partials.showcomments')
 
             </div>
         </div>

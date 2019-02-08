@@ -8,7 +8,7 @@ use App\Comments;
 use Auth;
 
 
-class TweetsController extends Controller
+class PostsController extends Controller
 {
     //
 //    @return void

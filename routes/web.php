@@ -28,6 +28,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'TweetsController@index')->name('tweets');
-Route::post('/tweet', 'TweetsController@saveTweet')->name('savetweet');
-Route::post('/comment', 'TweetsController@saveComment')->name('savecomment');
+Route::get('/home', 'PostsController@index')->name('tweets');
+Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
+Route::post('/comment', 'PostsController@saveComment')->name('savecomment');
