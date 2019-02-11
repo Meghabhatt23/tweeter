@@ -44,8 +44,15 @@ Route::get('rachel-profile', function () {
 
 
 Route::get('/home', 'PostsController@index')->name('tweets');
+
 Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
 Route::get('/tweet', 'PostsController@saveTweet')->name('savetweet');
+// Route::update('/tweet', 'PostsController@saveTweet')->name('supdatetweet');
+Route::delete('/delete-tweet', 'PostsController@deleteTweet')->name('delete-tweet');
+
 Route::post('/comment', 'PostsController@saveComment')->name('savecomment');
 Route::get('/comment', 'PostsController@saveComment')->name('savecomment');
+// Route::update('/comment', 'PostsController@saveComment')->name('updatecomment');
+Route::delete('/comment', 'PostsController@saveComment')->name('deletecomment');
+
 Route::post('/follow', 'UsersController@follow');

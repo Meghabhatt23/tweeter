@@ -32,6 +32,7 @@
 <div class="container-fluid gedf-wrapper">
         <div class="row">
 
+
               <div class="col-md-3">
                 <div class="card">
                         <div class="card-body">
@@ -60,11 +61,14 @@
 
             <div class="col-md-6 gedf-main">
 
+
                 <div class="tab-content" id="myTabContent">
                     <form name="tweet-form" method="post" action="tweet">
                         @csrf
 
+
                         <textarea name="tweet" class="form-control" placeholder="what's happening?"></textarea>
+                    
                         <br />
                         {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />  --}}
                         <div class="align-right">
@@ -75,7 +79,7 @@
                             if(isset($tweets) && ($tweets!==null)){
                             ?>
                             @include('partials.showtweets')
-                            <?phpswdfgbgv
+                            <?php
                             }
                             else{
                             ?>

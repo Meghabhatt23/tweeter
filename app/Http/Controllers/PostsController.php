@@ -63,9 +63,18 @@ class PostsController extends Controller
       $user = Auth::user();
       $comment = new Comments;
       $comment ->user_id = $user->id;
-      $comment ->tweet_id = $request->tweet_id=2;
+      $comment ->tweet_id = $request->tweet_id;
       $comment ->comments = $request->comment;
       $comment-> save();
       return redirect('home');
   }
+  public function deleteTweet(Request $request){
+     die("deleting Tweet");
+      $user = Auth::user();
+      $tweet = new Tweet;
+      $tweet ->user_id = $user->id;
+      $tweet ->tweets = $request->tweet;
+      $tweet -> save();
+      return redirect('home');
+}
 }
