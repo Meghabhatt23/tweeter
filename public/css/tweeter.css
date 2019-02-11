@@ -140,3 +140,60 @@ footer {
 .dropdown-toggle::after {
   content: none;
   display: none; }
+
+.topnav {
+  overflow: hidden;
+  background-color: white; }
+  .topnav img {
+    margin-left: 120px;
+    width: 70px; }
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  font-style: oblique;
+  font-family: sans-serif; }
+
+.topnav a:hover {
+  text-decoration: underline #1da1f2;
+  color: #1da1f2; }
+
+.topnav a.active {
+  background-color: #2196F3;
+  color: white; }
+
+.topnav .search-container {
+  float: right; }
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border-radius: 20px; }
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 160px;
+  background: #ddd;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  padding: 5px; }
+
+.topnav .search-container button:hover {
+  background: #ccc; }
+
+@media (min-width: 550px) {
+  .gedf-main {
+    padding-left: 4rem;
+    padding-right: 4rem; }
+  .gedf-card {
+    margin-bottom: 2.77rem; } }

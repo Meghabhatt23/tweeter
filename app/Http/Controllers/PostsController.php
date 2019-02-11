@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tweet;
 use App\Comments;
+use App\User;
+ use App\Follower;
 use Auth;
 
 
@@ -26,18 +28,26 @@ class PostsController extends Controller
   public function index()
   {
 
+    $users = new User;
+    $profilefollowers = $users = $users->get();
+    $user = Auth::user();
 
-      $tweet = new Tweet;
-      $tweets = $tweet->get();
+    // $follower = new Follower;
+    // $follower = $follower->where("user_id",$user->id)->where("following", 1)->get(array('id'))->toArray();
 
-        $tweetCollection = array();
-        foreach ($tweets as $tweet) {
-         $newTweet = $tweet;
-         $comments= Tweet::find($tweet->id)->comments;
-         $newTweet['comments'] = $comments;
-         $tweetCollection[] = $newTweet;
-     }
-     $tweets = $tweetCollection;
+
+
+  $tweet = new Tweet;
+  $tweets = $tweet->get();
+
+    $tweetCollection = array();
+    foreach ($tweets as $tweet) {
+     $newTweet = $tweet;
+     $comments= Tweet::find($tweet->id)->comments;
+     $newTweet['comments'] = $comments;
+     $tweetCollection[] = $newTweet;
+ }
+ $tweets = $tweetCollection;
 
      return view('home',compact('tweets'));
   }
@@ -57,5 +67,5 @@ class PostsController extends Controller
       $comment ->comments = $request->comment;
       $comment-> save();
       return redirect('home');
-}
+  }
 }

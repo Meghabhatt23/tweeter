@@ -4,7 +4,10 @@
 
 @section('content')
 
-<div class="row">
+
+
+
+<div class="row" style="width:100%;">
 
     <div class="col-sm-6 home-page">
 
@@ -44,25 +47,6 @@
                     </form>
 
             </div>
+
+@include('partials.footer')
 </div>
-        <footer>
-            <ul>
-                <li><a href="">About</a></li>
-                <li>Help Center</li>
-                <li>Blog</li>
-                <li>Status</li>
-                <li>Jobs</li>
-                <li>Terms</li>
-                <li>Privacy Policy</li>
-                <li>Cookies</li>
-                <li>Apps</li>
-                <li>Marketing</li>
-                <li>Advertise</li>
-                <li>Developers</li>
-                <li>Ads Info</li>
-                <li>Brands</li>
-                <li>Business</li>
-                <li>Directory</li>
-                <li>&copy<?php echo date("Y"); ?> Tweeter </li>
-            </ul>
-        </footer>

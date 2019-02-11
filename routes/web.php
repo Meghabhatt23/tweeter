@@ -22,12 +22,28 @@
 
 
 
-
+Auth::routes();
 Route::get('/', function () {
     return view('index');
 });
-Auth::routes();
+Route::get('mosa-profile', function () {
+    return view('mosa-profile');
+});
+Route::get('brittany-profile', function () {
+    return view('brittany-profile');
+});
+Route::get('bushra-profile', function () {
+    return view('bushra-profile');
+});
+Route::get('jordan-profile', function () {
+    return view('jordan-profile');
+});
+Route::get('rachel-profile', function () {
+    return view('rachel-profile');
+});
+
 
 Route::get('/home', 'PostsController@index')->name('tweets');
 Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
 Route::post('/comment', 'PostsController@saveComment')->name('savecomment');
+Route::post('/follow', 'UsersController@follow');
