@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-12">
             <div class="tweet">
-                {{$tweet->tweet}}
+                {{$tweet->tweets}}
                 <br />
                 <div class="user align-right">
                     -{{ $tweet->user_id }}

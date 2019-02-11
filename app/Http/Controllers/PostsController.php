@@ -25,20 +25,20 @@ class PostsController extends Controller
    *
    * @return \Illuminate\Contracts\Support\Renderable
    */
-  public function index()
-  {
+   public function index()
+   {
 
-    $users = new User;
-    $profilefollowers = $users = $users->get();
-    $user = Auth::user();
+     $users = new User;
+     $profilefollowers = $users = $users->get();
+     $user = Auth::user();
 
-    // $follower = new Follower;
-    // $follower = $follower->where("user_id",$user->id)->where("following", 1)->get(array('id'))->toArray();
+     // $follower = new Follower;
+     // $follower = $follower->where("user_id",$user->id)->where("following", 1)->get(array('id'))->toArray();
 
 
+       $tweet = new Tweet;
+       $tweets = $tweet->get();
 
-  $tweet = new Tweet;
-  $tweets = $tweet->get();
 
     $tweetCollection = array();
     foreach ($tweets as $tweet) {

@@ -45,5 +45,7 @@ Route::get('rachel-profile', function () {
 
 Route::get('/home', 'PostsController@index')->name('tweets');
 Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
+Route::get('/tweet', 'PostsController@saveTweet')->name('savetweet');
 Route::post('/comment', 'PostsController@saveComment')->name('savecomment');
+Route::get('/comment', 'PostsController@saveComment')->name('savecomment');
 Route::post('/follow', 'UsersController@follow');
