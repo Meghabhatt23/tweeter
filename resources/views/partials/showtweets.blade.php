@@ -10,6 +10,7 @@
                     <form name="delete-form" method="post" action="/delete-tweet">
                         @csrf
                         <input type="hidden" name="_method" value="DELETE"/>
+                        <input type="hidden" name="tweet_id" value="{{ $tweet->id }} /">
                         <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
                     </form>
                     <br /><br />
