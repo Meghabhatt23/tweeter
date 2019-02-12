@@ -2,7 +2,7 @@
     <div class="col-xs-12 col-md-12">
 @foreach($tweet->comments as $comment)
     <div class="single-comment">
-        {{ $comment->comment }} <br />
+        {{ $comment->comments }} <br />
         by - {{ $comment->user_id }}
         <br />
     </div>
@@ -21,4 +21,5 @@
                     <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Post</button>
                 </div>
             </form>
-</div>
+        
+                </div>

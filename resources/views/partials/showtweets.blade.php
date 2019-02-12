@@ -3,8 +3,24 @@
     <div class="row">
         <div class="col-xs-12 col-md-12">
             <div class="tweet">
-                {{$tweet->tweets}}
+
+                    {{ $tweet->tweet }}
+                    <br />
+
+                <form method="post" action="">
+                    <textarea class="tweets-display-text-area" disabled> {{$tweet->tweets}}</textarea>
+                </form>
+                <a href="/edit-tweet/{{$tweet->id}}">Edit</a> {{ $tweet->user_id }} @ {{ $tweet->created_at }}
+@php
+    if(isset($tweet->can_delete)){
+
+
+        @endphp
+
+
                 <br />
+
+
                 <div class="user align-right">
                     -{{ $tweet->user_id }}
                     <form name="delete-form" method="post" action="/delete-tweet">
@@ -14,7 +30,9 @@
                         <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
                     </form>
                     <br /><br />
-
+@php
+}
+        @endphp
 
 
                     <div class="row">
@@ -22,17 +40,9 @@
                             <div class="row">
                                 <div class="col-xs-12 col-md-12">
 
-{{--
-                            @foreach ($tweet->comments as $comment)
-                                <div class="single-comment">
-                                    {{ $comment->comment }} <br />
-                                     by - {{ $comment->user_id }}
-                                     <br />
-                                 </div>
-                            @endforeach --}}
                 </div>
             </div>
-</div>
+        </div>
                     @include('partials.showcomments')
 
             </div>

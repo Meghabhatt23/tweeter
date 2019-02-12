@@ -129,7 +129,7 @@ footer {
 .gedf-wrapper {
   margin-top: 0.97rem; }
 
-@media (min-width: 992px) {
+@media (min-width: 620px) {
   .gedf-main {
     padding-left: 4rem;
     padding-right: 4rem; }

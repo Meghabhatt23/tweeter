@@ -1,5 +1,4 @@
 
-
 <title>Mosa's Profile</title>
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -28,7 +27,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 
-<div class="container">
+{{-- <div class="container">
     <div class="fb-profile">
          <img align="left" class="fb-image-lg" src="images/mosacover1.png" alt="Profile image example"/>
          <img align="left" class="fb-image-profile thumbnail" src="images/mosa.png" alt="Profile image example"/>
@@ -41,32 +40,4 @@
 	       <button type="button" class="btn btn-success btn-sm">Follow</button>
 			<button type="button" class="btn btn-danger btn-sm">Message</button>
     	</div>
-</div>
-<div class="col-md-6 gedf-main">
-
-
-    <div class="tab-content" id="myTabContent">
-        <form name="tweet-form" method="post" action="tweet">
-                @csrf
-
-
-                <textarea name="tweet" class="form-control" placeholder="what's happening?"></textarea>
-
-                <br />
-                {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />  --}}
-                <div class="align-right">
-                    <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Tweet</button>
-                </div>
-         </form>
-                <?php
-                if(isset($tweets) && ($tweets!==null)){
-                ?>
-                @include('partials.showtweets')
-                <?php
-                }
-                else{
-                ?>
-                <?php } ?>
-    </div>
-
-</div>
+</div>--}

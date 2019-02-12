@@ -81,27 +81,7 @@ width: 100%;
      }
 
 }
-.tweet-view-area{
-    margin-top: 2px;
-    background-color: white;
-    padding: 50px 40px;
-      h1{
-          font-size: 30px;
-          font-weight: bold;
-      }
-      p{
-          color:#657786;
-      }
-  }
 
-.images-container{
-    text-align: center;
-    .profile-icon{
-        border-radius: 40px;
-        width: 40px;
-        margin: 8px auto;
-    }
-}
 .tweet{
     border-bottom: 1px solid #ccc;
     padding: 10px 5px;
@@ -148,10 +128,6 @@ footer{
     }
 }
 
-#comment-form{
-    text-align: right;
-}
-
         .h7 {
             font-size: 0.8rem;
         }
@@ -160,7 +136,7 @@ footer{
             margin-top: 0.97rem;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 620px) {
             .gedf-main {
                 padding-left: 4rem;
                 padding-right: 4rem;
@@ -168,13 +144,6 @@ footer{
             .gedf-card {
                 margin-bottom: 2.77rem;
             }
-        }
-
-        /**Reset Bootstrap*/
-        .dropdown-toggle::after {
-            content: none;
-            display: none;
-        }
 .topnav
 {
   overflow: hidden;
@@ -234,7 +203,11 @@ footer{
 .topnav .search-container button:hover {
   background: #ccc;
 }
-
+.tweets-display-text-area{
+    width: 100%;
+    background: #fff;
+    
+}
 
 @media (min-width: 550px) {
     .gedf-main {
@@ -243,6 +216,10 @@ footer{
     }
     .gedf-card {
         margin-bottom: 2.77rem;
+    }
+    ..navbar-laravel{
+        width:50%;
+
     }
 
 }

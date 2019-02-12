@@ -74,7 +74,6 @@ class PostsController extends Controller
       return redirect('home');
   }
 
-
   public function deleteTweet(Request $request){
 
      $tweet = Tweet::find($request->tweet_id);
@@ -84,4 +83,21 @@ class PostsController extends Controller
      return  redirect('home');
 
 }
+
+public function editTweet(Request $request){
+
+    $tweet =Tweet::find($request->tweet_id);
+    
+    $tweet ->tweets = $request->tweet;
+    $tweet -> save();
+    return redirect('home');
+
+}
+public function editTweetDisplay($id){
+
+    $tweet =Tweet::find($id);
+    return view('editTweet',compact('tweet'));
+
+    }
+
 }

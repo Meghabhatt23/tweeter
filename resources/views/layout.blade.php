@@ -2,7 +2,7 @@
 
 @extends('layouts.landing-layout')
 
-@section('content')
+
 
 
 
@@ -26,7 +26,7 @@
                 <img src="images/tweeter-logo.png" alt="logo" title="logo/">
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-6">
 
                 <form method="get" action="login">
                     <button class="btn btn-round">Login</button>
@@ -48,5 +48,7 @@
 
             </div>
 
+
 @include('partials.footer')
+
 </div>
