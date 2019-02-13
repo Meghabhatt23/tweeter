@@ -73,6 +73,7 @@
                         {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />  --}}
                         <div class="align-right">
                             <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Tweet</button>
+                            
                         </div>
                      </form>
                             <?php

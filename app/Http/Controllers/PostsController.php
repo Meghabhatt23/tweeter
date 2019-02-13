@@ -7,6 +7,8 @@ use App\Tweet;
 use App\Comments;
 use App\User;
 use App\Follower;
+use App\Tweetlike;
+
 use Auth;
 
 
@@ -40,16 +42,29 @@ class PostsController extends Controller
        $tweet = new Tweet;
        $tweets = $tweet->get();
 
-    $tweetCollection = array();
+       $tweet = Tweet::orderBy('created_at','desc')->get();
+       $tweetCollection = array();
 
-    foreach ($tweets as $tweet) {
+     foreach ($tweets as $tweet) {
      $newTweet = $tweet;
      $comments= Tweet::find($tweet->id)->comments;
       $newTweet['comments'] = $comments;
 
+      $newTweet['liked'] = 'false';
+      $tweetLike = \DB::table('tweetlikes')->where('user_id',$user->id)->where('tweet_id',$tweet->id)->orderBy('created_at','DESC')->first();
+
+      if(isset($tweetLike->like) && ($tweetLike->like == "1")){
+          $newTweet['liked'] = true;
+      }
+      $newTweet['user'] = Tweet::find($tweet->id)->user;
+
       if($user->id == $tweet->user_id){
-          $newTweet['can_delete'] = 1;
-     }
+          $newTweet['has_permissions'] = 1;
+      }
+
+     //  if($user->id == $tweet->user_id){
+     //      $newTweet['can_delete'] = 1;
+     // }
      $tweetCollection[] = $newTweet;
  }
     $tweets = $tweetCollection;
@@ -83,11 +98,20 @@ class PostsController extends Controller
      return  redirect('home');
 
 }
+public function deleteComment(Request $request){
+
+   $comment = Comments::find($request->user_id);
+   if($comment){
+       Comments::destroy($request->user_id);
+   }
+   return  redirect('home');
+
+}
 
 public function editTweet(Request $request){
 
     $tweet =Tweet::find($request->tweet_id);
-    
+
     $tweet ->tweets = $request->tweet;
     $tweet -> save();
     return redirect('home');
@@ -99,5 +123,15 @@ public function editTweetDisplay($id){
     return view('editTweet',compact('tweet'));
 
     }
+    public function likeTweet(Request $request){
+        $user = Auth::user();
+        $tweetLike = new Tweetlike;
+
+        $tweetLike ->user_id = $user->id;
+        $tweetLike ->tweet_id = $request->tweet_id;
+        $tweetLike ->like = $request->like;
+        $tweetLike -> save();
+        return redirect('home');
+  }
 
 }
