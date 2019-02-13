@@ -48,9 +48,9 @@ class PostsController extends Controller
      foreach ($tweets as $tweet) {
      $newTweet = $tweet;
      $comments= Tweet::find($tweet->id)->comments;
-      $newTweet['comments'] = $comments;
+      // $newTweet['comments'] = $comments;
 
-      $newTweet['liked'] = 'false';
+      $newTweet['liked'] = false;
       $tweetLike = \DB::table('tweetlikes')->where('user_id',$user->id)->where('tweet_id',$tweet->id)->orderBy('created_at','DESC')->first();
 
       if(isset($tweetLike->like) && ($tweetLike->like == "1")){

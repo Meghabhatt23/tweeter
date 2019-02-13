@@ -27,8 +27,8 @@
                                 <form name="like-form" method="post"  action="/like-tweet" class="float-left-section">
                                     @csrf
                                     <input type="hidden" name="tweet_id" value="{{ $tweet->id }}"/>
-                                    <input type="hidden" name="like" value="1" />
-                                    <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">like</button>
+                                    <input type="hidden" name="like" value="0" />
+                                    <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">unlike</button>
                                 </form>
                     @php
                     }
@@ -37,8 +37,8 @@
                          <form name="like-form" method="post"  action="/like-tweet" class="float-left-section">
                              @csrf
                              <input type="hidden" name="tweet_id" value="{{ $tweet->id }}"/>
-                             <input type="hidden" name="like" value="0" />
-                             <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">unlike</button>
+                             <input type="hidden" name="like" value="1" />
+                             <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">like</button>
                          </form>
 
                         @php
