@@ -33,17 +33,14 @@ class PostsController extends Controller
      $users = new User;
      $profilefollowers = $users = $users->get();
      $user = Auth::user();
-
+     $tweet = new Tweet;
+     $tweets = $tweet->get();
 
      // $follower = new Follower;
      // $follower = $follower->where("user_id",$user->id)->where("following", 1)->get(array('id'))->toArray();
 
-
-       $tweet = new Tweet;
-       $tweets = $tweet->get();
-
-       $tweet = Tweet::orderBy('created_at','desc')->get();
-       $tweetCollection = array();
+    $tweet = Tweet::orderBy('created_at','desc')->get();
+    $tweetCollection = array();
 
      foreach ($tweets as $tweet) {
      $newTweet = $tweet;
@@ -51,7 +48,7 @@ class PostsController extends Controller
       // $newTweet['comments'] = $comments;
 
       $newTweet['liked'] = false;
-      $tweetLike = \DB::table('tweetlikes')->where('user_id',$user->id)->where('tweet_id',$tweet->id)->orderBy('created_at','DESC')->first();
+      $tweetLike = \DB::table('Tweetlikes')->where('user_id',$user->id)->where('tweet_id',$tweet->id)->orderBy('created_at','DESC')->first();
 
       if(isset($tweetLike->like) && ($tweetLike->like == "1")){
           $newTweet['liked'] = true;

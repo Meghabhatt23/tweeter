@@ -1,10 +1,11 @@
- <?php
-
+<?php
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Follower;
 use App\Tweet;
+use App\User;
+use Auth;
+
 class UsersController extends Controller
 {
     public function index($id){
@@ -37,5 +38,16 @@ class UsersController extends Controller
         $follower->following = 1;
         $follower->save();
         return redirect('home');
+    }
+    public function editProfileDisplay(){
+        $currentUser = Auth:: User();
+        $currentUserId = $currentUser->id;
+
+        $user = new User();
+        $user = $user->find($currentUserId);
+        var_dump($user);
+
+
+        return view('editUserProfile',compact('user'));
     }
   }

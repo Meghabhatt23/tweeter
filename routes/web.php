@@ -44,7 +44,8 @@ Route::get('rachel-profile', function () {
 
 
 Route::get('/home', 'PostsController@index')->name('homepage');
-Route::get('/user/{id}', 'userssController@index')->name('user');
+Route::get('/user/{id}', 'usersController@index')->name('user');
+Route::get('/edit-profile', 'UsersController@editProfileDisplay');
 
 
 Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
