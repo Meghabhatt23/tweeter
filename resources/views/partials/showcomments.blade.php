@@ -19,16 +19,27 @@
         <div class="align-right" style="text-align:right">
             {{-- <a href="#" class="card-link" style="font-size:15px"><i class="fa fa-gittip" style="font-size:20px"></i> Like</a> --}}
             <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Post</button>
+
+
         </div>
     </form>
+
     <br />
 
-    <form name="delete-form" method="post" action="/delete-comment">
-        @csrf
-        <input type="hidden" name="_method" value="DELETE"/>
-        <input type="hidden" name="tweet_id" value="{{ $tweet->id }} /">
-        <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
-    </form>
+
+
+
+
+
+            @foreach($tweet->comments as $comment)
+
+        <a href="/delete/{{ $comment->id}}">
+            <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
+                <a href="/edit-comment/ {{ $comment->id }}" class="float-right-section">Edit</a>
+        </a>
+
+    @endforeach
+
 
 
 </div>

@@ -35,6 +35,10 @@ class PostsController extends Controller
      $user = Auth::user();
      $tweet = new Tweet;
      $tweets = $tweet->get();
+     $comment = new Comments;
+     $comments = $comment->get();
+
+
 
      // $follower = new Follower;
      // $follower = $follower->where("user_id",$user->id)->where("following", 1)->get(array('id'))->toArray();
@@ -95,35 +99,36 @@ class PostsController extends Controller
      return  redirect('home');
 
 }
-public function deleteComment(Request $request){
+ public function delete($id){
 
-   $comment = Comments::find($request->user_id);
-   if($comment){
-       Comments::destroy($request->user_id);
-   }
-   return  redirect('home');
-
+    $user = Auth::user();
+    Comments::where('id',$id)->delete();
+    return redirect('home');
 }
-
 public function editTweet(Request $request){
-
     $tweet =Tweet::find($request->tweet_id);
-
     $tweet ->tweets = $request->tweet;
     $tweet -> save();
     return redirect('home');
-
 }
 public function editTweetDisplay($id){
-
     $tweet =Tweet::find($id);
     return view('editTweet',compact('tweet'));
-
     }
-    public function likeTweet(Request $request){
+public function editComment(Request $request){
+        $comment = Comments::find($request->tweet_id);
+        $comment ->comments = $request->comments;
+        $comment -> save();
+        return redirect('home');
+    }
+public function editCommentDisplay($id){
+        $comment =Comments::find($id);
+        return view('editComment',compact('comment'));
+        }
+
+public function likeTweet(Request $request){
         $user = Auth::user();
         $tweetLike = new Tweetlike;
-
         $tweetLike ->user_id = $user->id;
         $tweetLike ->tweet_id = $request->tweet_id;
         $tweetLike ->like = $request->like;

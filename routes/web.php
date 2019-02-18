@@ -56,9 +56,11 @@ Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
 
 Route::get('/edit-tweet/{id}', 'PostsController@editTweetDisplay');
 Route::post('/edit-tweet', 'PostsController@editTweet');
+Route::get('/edit-comment/{id}', 'PostsController@editCommentDisplay');
+Route::post('/edit-comment', 'PostsController@editComment');
 
 Route::delete('/delete-tweet', 'PostsController@deleteTweet')->name('delete-tweet');
-Route::delete('/delete-comment', 'PostsController@deleteComment')->name('delete-comment');
+Route::get('/delete/{id}', 'PostsController@delete')->name('delete-comment');
 
 Route::post('/comment', 'PostsController@saveComment')->name('savecomment');
 Route::get('/comment', 'PostsController@saveComment')->name('savecomment');
