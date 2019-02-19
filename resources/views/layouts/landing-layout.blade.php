@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+
         <title>Tweeter</title>
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -15,6 +16,7 @@
     <body>
 
     <div class="StaticLoggedOutHomePage-cell StaticLoggedOutHomePage-utilityBlock" style="max-width:612px;" >
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <br /><br /><br />
         <div class="container-fluid">
 

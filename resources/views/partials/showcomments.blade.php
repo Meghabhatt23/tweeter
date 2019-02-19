@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12 col-md-12">
         @foreach($tweet->comments as $comment)
-            <div class="single-comment">
+            <div class="single-comment" style="font-size: 20px; color:#4D4D58; font-weight:bold; font-style: italic;">
                 {{ $comment->comments }} <br />
                 by - {{ $comment->user_id }}
                 <br />
@@ -26,12 +26,13 @@
 
     <br />
 
-
             @foreach($tweet->comments as $comment)
 
         <a href="/delete/{{ $comment->id}}">
+            <a href="/edit-comment/ {{ $comment->id }}" class="float-right-section">Edit</a>
             <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
-                <a href="/edit-comment/ {{ $comment->id }}" class="float-right-section">Edit</a>
+
+
         </a>
 
     @endforeach

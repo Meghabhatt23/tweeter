@@ -17,6 +17,7 @@ class UsersController extends Controller
         $tweets = $tweet->get();
 
         $tweetsCollection = array();
+
         foreach($tweets as $tweet){
         $newTweet = $tweet;
         $comments = Tweet::find($tweet->id)->comments;

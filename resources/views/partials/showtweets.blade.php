@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-12">
             <div class="tweet">
-                <div class="tweet-content">
+                <div class="tweet-content" style="font-size: 20px; color:#3B3B54; font-weight:bold; font-style: italic;">
                     {{ $tweet->tweets }}
                 </div>
                 <br />

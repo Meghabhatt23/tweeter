@@ -3,10 +3,10 @@ body{
     padding: 0;
 }
 .navbar-laravel{
-height: 46px;
-position: relative;
-border-bottom: 1px solid rgba(0,0,0,0.25);
-width: 100%;
+    height: 46px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    width: 100%;
 }
 .navbar-nav.mr-auto a{
     margin-left: 10px;
@@ -34,51 +34,41 @@ width: 100%;
     color: white;
     background-color: #1da1f2;
     padding: 120px 300px;
+}
+.home-page-right{
+    padding-top: 40px;
+    img{
+           max-width: 80px;
+       }
 
+       h1{
+           font-size: 40px;
+           font-weight: bold;
+           text-align: center;
+       }
+       h3{
+           font-size: 25px;
+           font-weight: bold;
+           text-align: center;
 
-        h2{
-             margin-bottom: 15px;
-             font-size: 40px;
-             text-align:left;
-             margin-left: 150px;
-         }
-     }
-     .home-page-right{
-         padding-top: 40px;
+       }
 
+    .btn-round{
 
-
-         img{
-             max-width: 80px;
-         }
-         h1{
-             font-size: 55px;
-             font-weight: bold;
-             text-align: center;
-             line-height: 64px;
-         }
-         h3{
-             font-size: 25px;
-             font-weight: bold;
-             text-align: center;
-
-         }
-         .btn-round{
-
-             text-align: right;
-             background-color: #1da1f2;
-             margin-bottom: 20px;
-             border-radius: 30px;
-             margin-left:90%;
-     }
-         .btn-full-width{
-             width: 80%;
-             color: black;
-             background-color: #1da1f2;
-             margin-bottom: 20px;
-             border-radius: 30px;
-             margin-left:50px;
-     }
+        text-align: right;
+        background-color:  #1da1f2;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        margin-left:90%;
+    }
+    .btn-full-width{
+        width: 80%;
+        color: black;
+        background-color: #1da1f2;
+        margin-bottom: 20px;
+        border-radius: 30px;
+        margin-left:50px;
+    }
 
 }
 
@@ -88,9 +78,9 @@ width: 100%;
     background-color: #fff;
     color: #212121;
     font-size: 11px;
-        .user{
-            padding-right: 10px;
-        }
+    .user{
+        padding-right: 10px;
+    }
 }
 .single-comment{
     padding: 10px 5px;
@@ -104,11 +94,11 @@ footer{
     width:100%;
     height:7%;
 
-      ul{
-          text-align: left;
-          margin-top: 1%;
-          margin: 0;
-          padding-top: 1%;
+    ul{
+        text-align: left;
+        margin-top: 1%;
+        margin: 0;
+        padding-top: 1%;
         li{
             color:#66757F;
             font-size: 13px;
@@ -128,88 +118,15 @@ footer{
     }
 }
 
-        .h7 {
-            font-size: 0.8rem;
-        }
-
-        .gedf-wrapper {
-            margin-top: 0.97rem;
-        }
-
-        @media (min-width: 620px) {
-            .gedf-main {
-                padding-left: 4rem;
-                padding-right: 4rem;
-            }
-            .gedf-card {
-                margin-bottom: 2.77rem;
-            }
-.topnav
-{
-  overflow: hidden;
-  background-color: white;
-    img{
-        margin-left: 120px;
-        width: 70px;
-    }
+.h7 {
+    font-size: 0.8rem;
 }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: bold;
-  font-style: oblique;
-  font-family:sans-serif;
+.gedf-wrapper {
+    margin-top: 0.97rem;
 }
 
-.topnav a:hover {
-  text-decoration: underline #1da1f2;;
-  color: #1da1f2;
-}
-
-.topnav a.active {
-  background-color: #2196F3;
-  color: white;
-}
-
-.topnav .search-container {
-  float: right;
-}
-
-.topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  font-size: 17px;
-  border-radius: 20px;
-}
-
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 160px;
-  background: #ddd;
-  font-size: 15px;
-  border: none;
-  cursor: pointer;
-  padding:5px;
-}
-
-.topnav .search-container button:hover {
-  background: #ccc;
-}
-.tweets-display-text-area{
-    width: 100%;
-    background: #fff;
-    
-}
-
-@media (min-width: 550px) {
+@media (min-width: 620px) {
     .gedf-main {
         padding-left: 4rem;
         padding-right: 4rem;
@@ -217,9 +134,79 @@ footer{
     .gedf-card {
         margin-bottom: 2.77rem;
     }
-    ..navbar-laravel{
-        width:50%;
+}
+    .topnav
+    {
+        overflow: hidden;
+        background-color: white;
+        img{
+            margin-left: 120px;
+            width: 70px;
+        }
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight: bold;
+        font-style: oblique;
+        font-family:sans-serif;
+    }
+
+    .topnav a:hover {
+        text-decoration: underline #1da1f2;;
+        color: #1da1f2;
+    }
+
+    .topnav a.active {
+        background-color: #2196F3;
+        color: white;
+    }
+
+    .topnav .search-container {
+        float: right;
+    }
+
+    .topnav input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        font-size: 17px;
+        border-radius: 20px;
+    }
+
+    .topnav .search-container button {
+        float: right;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 160px;
+        background: #ddd;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+        padding:5px;
+    }
+
+    .topnav .search-container button:hover {
+        background: #ccc;
+    }
+    .tweets-display-text-area{
+        width: 100%;
+        background: #fff;
 
     }
 
-}
+    @media (min-width: 550px) {
+        .gedf-main {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        .gedf-card {
+            margin-bottom: 2.77rem;
+        }
+
+    }

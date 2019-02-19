@@ -118,9 +118,7 @@ public function editTweetDisplay($id){
 public function editComment(Request $request){
     $user = Auth::user();
     $comment = Comments::find($request->comment_id);
-    // $comment ->user_id = $user->id;
-    // $comment ->tweet_id = $request->tweet_id;
-     $comment ->comments = $request->comment;
+    $comment ->comments = $request->comment;
     $comment -> save();
     return redirect('home');
     }

@@ -34,21 +34,15 @@ body {
   color: white;
   background-color: #1da1f2;
   padding: 120px 300px; }
-  .home-page h2 {
-    margin-bottom: 15px;
-    font-size: 40px;
-    text-align: left;
-    margin-left: 150px; }
 
 .home-page-right {
   padding-top: 40px; }
   .home-page-right img {
     max-width: 80px; }
   .home-page-right h1 {
-    font-size: 55px;
+    font-size: 40px;
     font-weight: bold;
-    text-align: center;
-    line-height: 64px; }
+    text-align: center; }
   .home-page-right h3 {
     font-size: 25px;
     font-weight: bold;
@@ -66,23 +60,6 @@ body {
     margin-bottom: 20px;
     border-radius: 30px;
     margin-left: 50px; }
-
-.tweet-view-area {
-  margin-top: 2px;
-  background-color: white;
-  padding: 50px 40px; }
-  .tweet-view-area h1 {
-    font-size: 30px;
-    font-weight: bold; }
-  .tweet-view-area p {
-    color: #657786; }
-
-.images-container {
-  text-align: center; }
-  .images-container .profile-icon {
-    border-radius: 40px;
-    width: 40px;
-    margin: 8px auto; }
 
 .tweet {
   border-bottom: 1px solid #ccc;
@@ -120,9 +97,6 @@ footer {
       footer ul li a:hover {
         color: #66757F; }
 
-#comment-form {
-  text-align: right; }
-
 .h7 {
   font-size: 0.8rem; }
 
@@ -135,11 +109,6 @@ footer {
     padding-right: 4rem; }
   .gedf-card {
     margin-bottom: 2.77rem; } }
-
-/**Reset Bootstrap*/
-.dropdown-toggle::after {
-  content: none;
-  display: none; }
 
 .topnav {
   overflow: hidden;
@@ -190,6 +159,10 @@ footer {
 
 .topnav .search-container button:hover {
   background: #ccc; }
+
+.tweets-display-text-area {
+  width: 100%;
+  background: #fff; }
 
 @media (min-width: 550px) {
   .gedf-main {
