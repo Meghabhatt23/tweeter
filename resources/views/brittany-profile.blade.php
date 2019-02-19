@@ -15,12 +15,7 @@
    <a href="#contact"> Notifications</a>
    <a href="#contact">Message</a>
    <img class="twtlogo" src="images/bird.png"  alt="logo">
-      <div class="search-container">
-         <form action="/action_page.php">
-            <input type="text" placeholder="Search Tweeter.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-         </form>
-    </div>
+
 </div>
 
 <!------ Include the above in your HEAD tag ---------->

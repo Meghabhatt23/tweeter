@@ -11,35 +11,28 @@
 
 <div class="topnav">
 
-   <a  href="home">Home</a>
-   <a href="#contact">Moments</a>
-   <a href="#contact"> Notifications</a>
-   <a href="#contact">Message</a>
-   <img class="twtlogo" src="images/bird.png"  alt="logo">
+    <a  href="home">Home</a>
+    <a href="#contact">Moments</a>
+    <a href="#contact"> Notifications</a>
+    <a href="#contact">Message</a>
+    <img class="twtlogo" src="images/bird.png"  alt="logo">
 
-      <div class="search-container">
-         <form action="/action_page.php">
-            <input type="text" placeholder="Search Tweeter.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-         </form>
-    </div>
 
 </div>
 
-<!------ Include the above in your HEAD tag ---------->
-
-
 <div class="container">
     <div class="fb-profile">
-         <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
-         <img align="left" class="fb-image-profile thumbnail" src="images/jordon.png" alt="Profile image example"/>
-            <div class="fb-profile-text">
-                <h1>Jordan Jordan</h1>
-                <p>Student at Innotech Collage</p>
-            </div>
-     </div>
-        <div class="profile-userbuttons">
-	       <button type="button" class="btn btn-success btn-sm">Follow</button>
-			<button type="button" class="btn btn-danger btn-sm">Message</button>
-    	</div>
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="images/jordon.png" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1>Jordan Jordan</h1>
+            <p>Student at Innotech Collage</p>
+        </div>
+    </div>
+
+    <div class="profile-userbuttons">
+        <button type="button" class="btn btn-success btn-sm">Follow</button>
+        <button type="button" class="btn btn-danger btn-sm">Message</button>
+    </div>
+
 </div>

@@ -1,11 +1,4 @@
-
-
 @extends('layouts.landing-layout')
-
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <div class="row" style="width:100%;">
 
@@ -17,9 +10,7 @@
             <p>Join the conversation.</p>
         </div>
     </div>
-
-
-
+    
     <div class="col-sm-6 home-page-right">
 
         <div class="col-md-3">
@@ -37,7 +28,7 @@
 
         <br/>
 
-        <p style="font-size:25px; color:#4D4D58; font-weight:bold; line-height:40px; margin-bottom:2px;">Join Tweeter today</p>
+        <h3>Join Tweeter today</h3>
 
         <br />
 
@@ -51,7 +42,6 @@
 
     </div>
 
-
-
-
 </div>
+
+@include('partials.footer')

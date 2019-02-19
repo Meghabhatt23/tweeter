@@ -42,14 +42,16 @@ body{
        }
 
        h1{
-           font-size: 40px;
+           font-size: 35px;
            font-weight: bold;
-           text-align: center;
+           text-align: left;
+           margin-left: 80px;
        }
        h3{
            font-size: 25px;
            font-weight: bold;
-           text-align: center;
+           text-align: left;
+           margin-left: 20px;
 
        }
 
@@ -87,7 +89,7 @@ body{
 }
 
 footer{
-    position: absolute;
+    position: relative;
     background-color: white;
     bottom: 0;
     left: 0;
@@ -95,13 +97,13 @@ footer{
     height:7%;
 
     ul{
-        text-align: left;
-        margin-top: 1%;
+        text-align: center;
+        margin-top: 30%;
         margin: 0;
         padding-top: 1%;
         li{
-            color:#66757F;
-            font-size: 13px;
+            color:black;
+            font-size: 17px;
             padding-right: 1%;
             display: inline;
             a:link{
@@ -117,6 +119,7 @@ footer{
 
     }
 }
+
 
 .h7 {
     font-size: 0.8rem;

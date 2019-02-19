@@ -40,13 +40,15 @@ body {
   .home-page-right img {
     max-width: 80px; }
   .home-page-right h1 {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
-    text-align: center; }
+    text-align: left;
+    margin-left: 80px; }
   .home-page-right h3 {
     font-size: 25px;
     font-weight: bold;
-    text-align: center; }
+    text-align: left;
+    margin-left: 20px; }
   .home-page-right .btn-round {
     text-align: right;
     background-color: #1da1f2;
@@ -74,20 +76,20 @@ body {
   padding: 10px 5px; }
 
 footer {
-  position: absolute;
+  position: relative;
   background-color: white;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 7%; }
   footer ul {
-    text-align: left;
-    margin-top: 1%;
+    text-align: center;
+    margin-top: 30%;
     margin: 0;
     padding-top: 1%; }
     footer ul li {
-      color: #66757F;
-      font-size: 13px;
+      color: black;
+      font-size: 17px;
       padding-right: 1%;
       display: inline; }
       footer ul li a:link {

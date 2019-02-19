@@ -10,30 +10,23 @@
 
 
 <div class="topnav">
-   <a href="home">Home</a>
-   <a href="#contact">Moments</a>
-   <a href="#contact"> Notifications</a>
-   <a href="#contact">Message</a>
-   <img class="twtlogo" src="images/bird.png"  alt="logo">
-      <div class="search-container">
-         <form action="/action_page.php">
-            <input type="text" placeholder="Search Tweeter.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-         </form>
-    </div>
-</div>
+    <a href="home">Home</a>
+    <a href="#contact">Moments</a>
+    <a href="#contact"> Notifications</a>
+    <a href="#contact">Message</a>
+    <img class="twtlogo" src="images/bird.png"  alt="logo">
 
-<!------ Include the above in your HEAD tag ---------->
+</div>
 
 
 <div class="container">
     <div class="fb-profile">
-         <img align="left" class="fb-image-lg" src="images/mosacover1.png" alt="Profile image example"/>
-         <img align="left" class="fb-image-profile thumbnail" src="images/mosa.png" alt="Profile image example"/>
-            <div class="fb-profile-text">
-                <h1>Mosa Adekundle</h1>
-                <p>Instructor at Innotech Collage</p>
-            </div>
-     </div>
+        <img align="left" class="fb-image-lg" src="images/mosacover1.png" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="images/mosa.png" alt="Profile image example"/>
+        <div class="fb-profile-text">
+            <h1>Mosa Adekundle</h1>
+            <p>Instructor at Innotech Collage</p>
+        </div>
+    </div>
 
 </div>

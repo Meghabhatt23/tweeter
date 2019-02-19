@@ -20,13 +20,6 @@
         <a href="#contact">Message</a>
         <img class="twtlogo" src="images/bird.png"  alt="logo">
 
-        <div class="search-container">
-            <form action="/action_page.php">
-                <input type="text" placeholder="Search Tweeter.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-
     </div>
 
     <div class="container-fluid gedf-wrapper">
@@ -119,8 +112,8 @@
                                 <input type="text" class="form-control" name="gender" value="{{ $user->gender }}" />
                             </div>
                         </div>
-                        <br />
 
+                        <br />
 
                         <div class="align-right">
                             <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Edit Profile</button>

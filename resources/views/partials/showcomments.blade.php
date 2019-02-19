@@ -19,24 +19,18 @@
         <div class="align-right" style="text-align:right">
             {{-- <a href="#" class="card-link" style="font-size:15px"><i class="fa fa-gittip" style="font-size:20px"></i> Like</a> --}}
             <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Post</button>
-
-
         </div>
     </form>
 
     <br />
 
-            @foreach($tweet->comments as $comment)
+    @foreach($tweet->comments as $comment)
 
         <a href="/delete/{{ $comment->id}}">
             <a href="/edit-comment/ {{ $comment->id }}" class="float-right-section">Edit</a>
             <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
-
-
         </a>
 
     @endforeach
-
-
 
 </div>

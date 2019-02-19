@@ -92,11 +92,11 @@
                             </div>
 
 
-                                <a href="mosa-profile" class="card-link">Mosa</a><br />
-                                Instructor
+                            <a href="mosa-profile" class="card-link">Mosa</a><br />
+                            Instructor
                             <p class="card-text"></p>
-                      <a href="/user-follow @php{{$user->id }}@endphp"> Follow </a>
-                      <a href="/user-unfollow @php{{$user->id }}@endphp"> Unfollow </a>
+                            <a href="/user-follow @php{{$user->id }}@endphp"> Follow </a>
+                            <a href="/user-unfollow @php{{$user->id }}@endphp"> Unfollow </a>
                         </div>
                     </div>
 
