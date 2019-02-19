@@ -27,10 +27,6 @@
     <br />
 
 
-
-
-
-
             @foreach($tweet->comments as $comment)
 
         <a href="/delete/{{ $comment->id}}">

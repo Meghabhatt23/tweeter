@@ -66,9 +66,9 @@
 
                     <form name="comment-form" method="post" action="/edit-comment">
                         @csrf
-                        <textarea name="comment" class="form-control" placeholder="what's happening?">{{$comment->comments}}</textarea>
+                        <textarea name="comment" class="form-control" placeholder="comment here">{{$comment->comments}}</textarea>
                         <br />
-                        <input type="hidden" name="tweet_id" value="{{ $comment->user_id }}" />
+                        <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
                         <div class="align-right">
                             <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Edit Comment</button>
                         </div>

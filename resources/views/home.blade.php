@@ -90,10 +90,13 @@
                             <div class="mr-2">
                                 <img class="rounded-circle" width=100 src="images/mosa.png" alt="">
                             </div>
-                            <a href="mosa-profile" class="card-link">Mosa</a><br />
-                            Instructor
+
+
+                                <a href="mosa-profile" class="card-link">Mosa</a><br />
+                                Instructor
                             <p class="card-text"></p>
-                            <button type="submit" class="btn btn-follow" style="background-color: #1da1f2; color:white;">Follow</button>
+                      <a href="/user-follow @php{{$user->id }}@endphp"> Follow </a>
+                      <a href="/user-unfollow @php{{$user->id }}@endphp"> Unfollow </a>
                         </div>
                     </div>
 

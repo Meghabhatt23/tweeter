@@ -30,23 +30,44 @@ class UsersController extends Controller
 
 
     }
-    public function follow($id){
-        $user = Auth:: User();
-        $follower = new Follower;
-        $follower->users_id = $user->id;
-        $follower->follower_id = $request->user_id;
-        $follower->following = 1;
-        $follower->save();
-        return redirect('home');
+
+   public function followUser(User $user)
+   {
+     $user = User::find($profileId);
+     if(! $user) {
+
+        return redirect()->back()->with('error', 'User does not exist.');
     }
+
+   $user->followers()->attach(auth()->user()->id);
+        return redirect()->back()->with('success', 'Successfully followed the user.');
+   }
+
+   public function unFollowUser(User $user)
+   {
+         $user = User::find($profileId);
+         if(! $user) {
+
+        return redirect()->back()->with('error', 'User does not exist.');
+    }
+
+    $user->followers()->detach(auth()->user()->id);
+    return redirect()->back()->with('success', 'Successfully unfollowed the user.');
+}
+
+public function show(User $user)
+{
+    $user = User::find($userId);
+    $followers = $user->followers;
+    $followings = $user->followings;
+    return view('user.show', compact('user', 'follower' , 'followings');
+}
     public function editProfileDisplay(){
         $currentUser = Auth:: User();
         $currentUserId = $currentUser->id;
 
         $user = new User();
         $user = $user->find($currentUserId);
-
-
 
         return view('editUserProfile',compact('user'));
     }
