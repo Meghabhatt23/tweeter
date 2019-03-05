@@ -12,14 +12,8 @@
 */
 
 
-
-
-
-
 //Route::get('user','usersController@index');
 //Route::get('/tasks/{task}','TaskController@show');
-
-
 
 
 Auth::routes();
@@ -49,10 +43,7 @@ Route::get('/user/{id}', 'usersController@index')->name('user');
 Route::get('/edit-profile', 'UsersController@editProfileDisplay');
 Route::post('/edit-profile', 'UsersController@editProfile');
 
-
 Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
-
-
 
 Route::get('/edit-tweet/{id}', 'PostsController@editTweetDisplay');
 Route::post('/edit-tweet', 'PostsController@editTweet');

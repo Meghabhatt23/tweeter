@@ -15,9 +15,7 @@
    <a href="#contact"> Notifications</a>
    <a href="#contact">Message</a>
    <img class="twtlogo" src="images/bird.png"  alt="logo">
-      <div class="search-container">
-        
-    </div>
+
 </div>
 
 <!------ Include the above in your HEAD tag ---------->

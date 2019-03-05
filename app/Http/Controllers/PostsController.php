@@ -99,11 +99,11 @@ class PostsController extends Controller
      return  redirect('home');
 
 }
- public function delete($id){
+public function delete($id){
 
-    $user = Auth::user();
-    Comments::where('id',$id)->delete();
-    return redirect('home');
+  $user = Auth::user();
+  Comments::where('id',$id)->delete();
+  return redirect('home');
 }
 public function editTweet(Request $request){
     $tweet =Tweet::find($request->tweet_id);
@@ -123,18 +123,18 @@ public function editComment(Request $request){
     return redirect('home');
     }
 public function editCommentDisplay($id){
-        $comment =Comments::find($id);
-        return view('editComment',compact('comment'));
-        }
+    $comment =Comments::find($id);
+    return view('editComment',compact('comment'));
+    }
 
 public function likeTweet(Request $request){
-        $user = Auth::user();
-        $tweetLike = new Tweetlike;
-        $tweetLike ->user_id = $user->id;
-        $tweetLike ->tweet_id = $request->tweet_id;
-        $tweetLike ->like = $request->like;
-        $tweetLike -> save();
-        return redirect('home');
+    $user = Auth::user();
+    $tweetLike = new Tweetlike;
+    $tweetLike ->user_id = $user->id;
+    $tweetLike ->tweet_id = $request->tweet_id;
+    $tweetLike ->like = $request->like;
+    $tweetLike -> save();
+    return redirect('home');
   }
 
 }
