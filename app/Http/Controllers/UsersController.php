@@ -94,11 +94,8 @@ public function editProfile(Request $request){
 public function editProfileDisplay(){
         $currentUser = Auth:: User();
         $currentUserId = $currentUser->id;
-
         $user = new User();
         $user = $user->find($currentUserId);
-        
-
 
         return view('editUserProfile',compact('user'));
     }
