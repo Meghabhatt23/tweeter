@@ -6,6 +6,8 @@
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <link rel="stylesheet" href="{{ URL::asset('css/profile.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="{{ URL::asset('css/tweeter.css')}}" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!------ Include the above in your HEAD tag ---------->
 
 

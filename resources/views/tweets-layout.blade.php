@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('../css/tweeter.css')}}">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -16,7 +18,6 @@
 
     <div class="container">
         @yield('main-content')
-
     </div>
 
     <div class="row">
@@ -25,7 +26,7 @@
             <form method="post" action="/posts">
                 @csrf
                 <textarea class="form-control tweet-box"
-                name="tweet" placeholder="Enter tweet here"></textarea>
+                   name="tweet" placeholder="Enter tweet here"></textarea>
                 <br />
                 <button class="btn btn-success btn-sm">Post</button>
             </form>

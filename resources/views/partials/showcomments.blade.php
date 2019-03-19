@@ -20,16 +20,16 @@
             <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Post</button>
         </div>
     </form>
-
-    <br />
-
+<br />
     @foreach($tweet->comments as $comment)
-
         <a href="/delete/{{ $comment->id}}">
+             <i class="fa fa-trash" style="font-size:27px; margin:20px;"></i>
 
-            <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;"> Delete </button>
-<br>
-            <a href="/edit-comment/ {{ $comment->id }}" class="float-right-section">Edit</a>
+         <a href="/edit-comment/ {{ $comment->id }}"  class="card-link class"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:27px;">
+            </i>
+
+
+
         </a>
 
     @endforeach

@@ -26,51 +26,66 @@ class UsersController extends Controller
     }
         $tweets = $tweetsCollection;
 
-        return view('profilepage',compacts('user','profilefollowers','tweets'));
+        return view('user', compact('user'));
 
     }
 
 
-//    public function followUser(User $user)
-//    {
-//      $user = User::find($profileId);
-//      if(! $user) {
-//
-//         return redirect()->back()->with('error', 'User does not exist.');
-//     }
-//
-//    $user->followers()->attach(auth()->user()->id);
-//         return redirect()->back()->with('success', 'Successfully followed the user.');
-//    }
-//
-//    public function unFollowUser(User $user)
-//    {
-//          $user = User::find($profileId);
-//          if(! $user) {
-//
-//         return redirect()->back()->with('error', 'User does not exist.');
-//     }
-//
-//     $user->followers()->detach(auth()->user()->id);
-//     return redirect()->back()->with('success', 'Successfully unfollowed the user.');
-//     }
-//
-// public function show(User $user)
-// {
-//     $user = User::find($userId);
-//     $followers = $user->followers;
-//     $followings = $user->followings;
-//     return view('user.show', compact('user', 'follower' , 'followings');
-//     }
-//     public function editProfileDisplay(){
-//         $currentUser = Auth:: User();
-//         $currentUserId = $currentUser->id;
-//
-//         $user = new User();
-//         $user = $user->find($currentUserId);
-//
-//         return view('editUserProfile',compact('user'));
-//     }
+
+
+
+
+
+
+
+
+
+
+
+    public function store()
+	{
+        $input = array_add(Input::get(), 'userId', Auth::id());
+        $this->execute(FollowUserCommand::class, $input);
+        Flash::success('You are now following this user.');
+        return Redirect::back();
+	}
+    /**
+     * Unfollow a user.
+     *
+     * @param $userIdToUnfollow
+     * @internal param int $id
+     * @return Response
+     */
+	public function destroy($userIdToUnfollow)
+	{
+        $input = array_add(Input::get(), 'userId', Auth::id());
+        $this->execute(UnfollowUserCommand::class, $input);
+        Flash::success('You have now unfollowed this user.');
+        return Redirect::back();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 public function editProfile(Request $request){
 
@@ -79,16 +94,13 @@ public function editProfile(Request $request){
     $user = new User();
     $currentUserId = $currentUser->id;
     $user = $user->find($currentUserId);
-
     $user->name = $request->name;
     $user->last_name = $request->last_name;
     $user->email = $request->email;
     $user->telephone = $request->telephone;
     $user->gender = $request->gender;
-
     $user -> save();
     return redirect('home');
-
 
 }
 public function editProfileDisplay(){

@@ -58,7 +58,7 @@ Route::get('/comment', 'PostsController@saveComment')->name('savecomment');
 
 Route::delete('/comment', 'PostsController@saveComment')->name('deletecomment');
 
-Route::post('profile/{profileId}/user-follow', 'UsersController@followUser')->name('user-follow');
-Route::post('/{profileId}/user-unfollow', 'UsersController@unFollowUser')->name('user-unfollow');
+Route::post('user-follow', 'UsersController@followUser')->name('user-follow');
+Route::post('user-unfollow', 'UsersController@unFollowUser')->name('user-unfollow');
 
 Route::post('/like-tweet', 'PostsController@likeTweet');

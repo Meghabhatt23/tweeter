@@ -12,7 +12,9 @@
                 @php
                 if(isset($tweet->has_permissions)){
                     @endphp
-                    <a href="/edit-tweet/ {{ $tweet->id }}" class="float-left-section">Edit</a>
+                    <a href="/edit-tweet/ {{ $tweet->id }}" class="card-link class"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px;">
+                        Edit</i>
+                        </a>
                     @php
                     if(isset($tweet->liked) && ($tweet->liked==true)){
                         @endphp
@@ -34,6 +36,7 @@
                         <input type="hidden" name="tweet_id" value="{{ $tweet->id }}"/>
                         <input type="hidden" name="like" value="1" />
                         <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">like</button>
+
                         </form>
 
                         @php
@@ -46,6 +49,7 @@
                     <input type="hidden" name="_method" value="DELETE"/>
                     <input type="hidden" name="tweet_id" value="{{ $tweet->id }} /">
                     <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
+
                     </form>
 
                     <br /><br />
