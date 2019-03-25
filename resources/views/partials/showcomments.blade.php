@@ -23,8 +23,7 @@
 <br />
     @foreach($tweet->comments as $comment)
         <a href="/delete/{{ $comment->id}}">
-             <i class="fa fa-trash" style="font-size:27px; margin:20px;"></i>
-
+        <i class="fa fa-trash" style="font-size:27px; margin:20px;"></i>
          <a href="/edit-comment/ {{ $comment->id }}"  class="card-link class"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:27px;">
             </i>
 

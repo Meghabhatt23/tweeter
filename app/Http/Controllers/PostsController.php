@@ -1,17 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Tweet;
 use App\Comments;
 use App\User;
 use App\Follower;
 use App\Tweetlike;
+use App\Http\Resources\Tweet as TweetResource;
+use App\Http\Resources\Comments as CommentsResource;
+use App\Http\Resources\Tweetlike as TweetlikeResource;
 
 use Auth;
-
-
 class PostsController extends Controller
 {
     //
@@ -19,7 +19,7 @@ class PostsController extends Controller
   // */
   public function __construct()
   {
-      $this->middleware('auth');
+      // $this->middleware('auth');
   }
 
   /**
@@ -31,14 +31,15 @@ class PostsController extends Controller
    {
 
      $users = new User;
+
      $profilefollowers = $users = $users->get();
      $user = Auth::user();
+
+
      $tweet = new Tweet;
      $tweets = $tweet->get();
      $comment = new Comments;
      $comments = $comment->get();
-
-
 
      // $follower = new Follower;
      // $follower = $follower->where("user_id",$user->id)->where("following", 1)->get(array('id'))->toArray();
@@ -72,6 +73,20 @@ class PostsController extends Controller
 
      return view('home',compact('tweets'));
   }
+  public function homepage(Request $request){
+      $user = new User();
+      $user->name = $request->name;
+      $user -> save();
+      return redirect('home');
+}
+public function namehomepage(){
+        $currentUser = Auth:: User();
+        $currentUserId = $currentUser->id;
+        $user = new User();
+        $user = $user->find($currentUserId);
+        return view('homepage',compact('user'));
+    }
+
   public function saveTweet(Request $request){
       $user = Auth::user();
       $tweet = new Tweet;
@@ -89,6 +104,28 @@ class PostsController extends Controller
       $comment-> save();
       return redirect('home');
   }
+
+  public function editProfile(Request $request){
+      $currentUser = Auth:: User();
+      $user = new User();
+      $currentUserId = $currentUser->id;
+      $user = $user->find($currentUserId);
+      $user->name = $request->name;
+      $user->last_name = $request->last_name;
+      $user->email = $request->email;
+      $user->telephone = $request->telephone;
+      $user->gender = $request->gender;
+      $user -> save();
+      return redirect('home');
+
+  }
+  public function editProfileDisplay(){
+          $currentUser = Auth:: User();
+          $currentUserId = $currentUser->id;
+          $user = new User();
+          $user = $user->find($currentUserId);
+          return view('editUserProfile',compact('user'));
+      }
 
   public function deleteTweet(Request $request){
 
@@ -136,5 +173,16 @@ public function likeTweet(Request $request){
     $tweetLike -> save();
     return redirect('home');
   }
-
+  public function getAllTweets(){
+          $tweets =  Tweet::get();
+          return new TweetResource($tweets);
+  }
+  public function getAllComments(){
+          $comments =  Comments::get();
+          return new CommentsResource($comments);
+  }
+  public function getAllTweetLikes(){
+          $tweetLikes =  Tweetlike::get();
+          return new TweetlikeResource($tweetLikes);
+  }
 }

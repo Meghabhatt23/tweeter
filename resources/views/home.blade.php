@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <!------ Include the above in your HEAD tag ---------->
 
     <div class="topnav">
@@ -22,7 +21,6 @@
         <a href="#contact"> Notifications</a>
         <a href="#contact">Message</a>
         <img class="twtlogo" src="images/bird.png"  alt="logo">
-
 
     </div>
 
@@ -37,12 +35,13 @@
                             <img class="rounded-circle" width="70" src="images/profile.png" alt="">
                         </div>
                         <div class="h5">
-                            @MeghaBhatt
+                {{ $user->name }}
                         </div>
                         <div class="h7" style="font-weight:bold;">
                             Believe in youself..!!
                         </div>
                     </div>
+
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="h6 text-muted">Followers</div>
@@ -56,13 +55,12 @@
                 </div>
             </div>
 
-            <div class="col-md-6 gedf-main">
 
+            <div class="col-md-6 gedf-main">
 
                 <div class="tab-content" id="myTabContent">
                     <form name="tweet-form" method="post" action="tweet">
                         @csrf
-
 
                         <textarea name="tweet" class="form-control" placeholder="what's happening?" style="font-size: 20px;" ></textarea>
 

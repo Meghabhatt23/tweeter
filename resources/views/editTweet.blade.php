@@ -35,7 +35,7 @@
                             <img class="rounded-circle" width="70" src="images/profile.png" alt="">
                         </div>
                         <div class="h5">
-                            @MeghaBhatt
+                        {{-- @php    {{ $user->name }} @endphp --}}
                         </div>
                         <div class="h7" style="font-weight:bold;">
                             Believe in youself..!!

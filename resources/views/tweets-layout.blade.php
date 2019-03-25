@@ -46,8 +46,8 @@
                         <textarea class="form-control tweet-box"
                         name="comment" placeholder="comments on this tweet"></textarea>
                         <br />
-                        <input type="hidden" name="user_id" value="{{$singletweet->user_id}}"/>
-                        <input type="hidden" name="tweet_id" value="{{$singletweet->id}}"/>
+                        <input type="hidden" name="user_id" value="{{ $singletweet->user_id}}"/>
+                        <input type="hidden" name="tweet_id" value="{{ $singletweet->id}}"/>
 
                         <button class="btn btn-success btn-sm">Post</button>
                     </form>

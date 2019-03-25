@@ -38,19 +38,20 @@ Route::get('rachel-profile', function () {
 
 
 Route::get('/home', 'PostsController@index')->name('homepage');
-Route::get('/user/{id}', 'usersController@index')->name('user');
+Route::post('/home', 'PostsController@namehomepage');
+Route::get('/user/{id}', 'UsersController@index')->name('user');
 
-Route::get('/edit-profile', 'UsersController@editProfileDisplay');
-Route::post('/edit-profile', 'UsersController@editProfile');
+Route::get('/edit-profile', 'PostsController@editProfileDisplay');
+Route::post('/edit-profile', 'PostsController@editProfile');
 
 Route::post('/tweet', 'PostsController@saveTweet')->name('savetweet');
 
 Route::get('/edit-tweet/{id}', 'PostsController@editTweetDisplay');
 Route::post('/edit-tweet', 'PostsController@editTweet');
-Route::get('/edit-comment/{id}', 'PostsController@editCommentDisplay');
+Route::get('/edit-comment/{id}','PostsController@editCommentDisplay');
 Route::post('/edit-comment', 'PostsController@editComment');
 
-Route::delete('/delete-tweet', 'PostsController@deleteTweet')->name('delete-tweet');
+Route::delete('/delete-tweet','PostsController@deleteTweet')->name('delete-tweet');
 Route::get('/delete/{id}', 'PostsController@delete')->name('delete-comment');
 
 Route::post('/comment', 'PostsController@saveComment')->name('savecomment');

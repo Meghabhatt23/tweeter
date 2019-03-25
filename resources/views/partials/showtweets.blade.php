@@ -6,15 +6,15 @@
                 <div class="tweet-content" style="font-size: 20px; color:#3B3B54; font-weight:bold; font-style: italic;">
                     {{ $tweet->tweets }}
                 </div>
-                <br />
 
-                {{ $tweet->user->name }} @  {{ $tweet->created_at }}
+<div class="container">
+                 {{ $tweet->created_at }} @ {{ $tweet->user->name }}
                 @php
                 if(isset($tweet->has_permissions)){
                     @endphp
-                    <a href="/edit-tweet/ {{ $tweet->id }}" class="card-link class"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px;">
-                        Edit</i>
-                        </a>
+                    <a href="/edit-tweet/ {{ $tweet->id }}" class="card-link class">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px; color:#1da1f2;"></i>
+                    </a>
                     @php
                     if(isset($tweet->liked) && ($tweet->liked==true)){
                         @endphp
@@ -36,29 +36,20 @@
                         <input type="hidden" name="tweet_id" value="{{ $tweet->id }}"/>
                         <input type="hidden" name="like" value="1" />
                         <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">like</button>
-
                         </form>
-
                         @php
                     }
                     @endphp
-                    <br />
-
                     <form name="delete-form" method="post" action="/delete-tweet">
                     @csrf
                     <input type="hidden" name="_method" value="DELETE"/>
                     <input type="hidden" name="tweet_id" value="{{ $tweet->id }} /">
-                    <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;">Delete</button>
-
+                    <button class="btn"  style="background-color:white;"><i class="fa fa-trash" style="color:#1da1f2; font-size:20px; margin-top:0;"></i></button>
                     </form>
-
-                    <br /><br />
-
                     @php
                 }
             @endphp
-
-
+            </div>
             <div class="user align-right">
                 {{-- {{ $tweet->user_id }} --}}
                 <div class="row">
@@ -67,9 +58,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
 @endforeach
