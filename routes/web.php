@@ -23,6 +23,9 @@ Route::get('/', function () {
 Route::get('mosa-profile', function () {
     return view('mosa-profile');
 });
+Route::get('marketing', function () {
+    return view('marketing');
+});
 Route::get('brittany-profile', function () {
     return view('brittany-profile');
 });

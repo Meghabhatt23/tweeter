@@ -11,8 +11,6 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!------ Include the above in your HEAD tag ---------->
 
     <div class="topnav">
@@ -35,7 +33,7 @@
                             <img class="rounded-circle" width="70" src="images/profile.png" alt="">
                         </div>
                         <div class="h5">
-                        {{-- @php    {{ $user->name }} @endphp --}}
+                            @MeghaBhatt
                         </div>
                         <div class="h7" style="font-weight:bold;">
                             Believe in youself..!!
@@ -55,6 +53,8 @@
             </div>
 
             <div class="col-md-6 gedf-main">
+
+
                 <div class="tab-content" id="myTabContent">
                     <form name="tweet-form" method="post" action="/edit-tweet">
                         @csrf
