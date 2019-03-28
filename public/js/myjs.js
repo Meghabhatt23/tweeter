@@ -1,25 +1,16 @@
-var string = "7 Reasons Why You Should Be Using Tweeter!";
-var str = string.split("");
-var el = document.getElementById('header');
-(function animate() {
-str.length > 0 ? el.innerHTML += str.shift() : clearTimeout(running);
-var running = setTimeout(animate, 90);
-})();
 
-$(function() {
-
-              var documentEl = $(document),
-                  fadeElem = $('.fade-scroll');
-
-
-              documentEl.on('scroll', function() {
-                  var currScrollPos = documentEl.scrollTop();
-
-                  fadeElem.each(function() {
-                      var $this = $(this),
-                          elemOffsetTop = $this.offset().top;
-                      if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 - (currScrollPos-elemOffsetTop)/400);
-                  });
-              });
-
-          });
+   wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    document.getElementById('moar').onclick = function() {
+      var section = document.createElement('section');
+      section.className = 'section--purple wow fadeInDown';
+      this.parentNode.insertBefore(section, this);
+    };

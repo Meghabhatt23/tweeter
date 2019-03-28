@@ -174,8 +174,8 @@ public function likeTweet(Request $request){
         return new TweetlikeResource($tweetLikes);
         }
 
-        public function getAllTweetsByNumber($number){
-            $tweets =  Tweet::limit($number)->get();
-            return new TweetResource($tweets);
+    public function getAllTweetsByNumber($number){
+        $tweets =  Tweet::limit($number)->get();
+        return new TweetResource($tweets);
             }
 }
