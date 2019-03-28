@@ -43,8 +43,6 @@ class PostsController extends Controller
 
 
 
-     // $follower = new Follower;
-     // $follower = $follower->where("user_id",$user->id)->where("following", 1)->get(array('id'))->toArray();
 
     // $tweet = Tweet::orderBy('created_at','desc')->get();
     $tweetCollection = array();
@@ -52,7 +50,7 @@ class PostsController extends Controller
      foreach ($tweets as $tweet) {
      $newTweet = $tweet;
      $comments= Tweet::find($tweet->id)->comments;
-      // $newTweet['comments'] = $comments;
+
 
       $newTweet['liked'] = false;
       $tweetLike = \DB::table('Tweetlikes')->where('user_id',$user->id)->where('tweet_id',$tweet->id)->orderBy('created_at','DESC')->first();
@@ -65,10 +63,6 @@ class PostsController extends Controller
       if($user->id == $tweet->user_id){
           $newTweet['has_permissions'] = 1;
       }
-
-     //  if($user->id == $tweet->user_id){
-     //      $newTweet['can_delete'] = 1;
-     // }
      $tweetCollection[] = $newTweet;
  }
     $tweets = $tweetCollection;
@@ -76,6 +70,7 @@ class PostsController extends Controller
      return view('home',compact('tweets','user'));
   }
   public function saveTweet(Request $request){
+      $this->middleware('auth');
       $user = Auth::user();
       $tweet = new Tweet;
       $tweet ->user_id = $user->id;
@@ -156,27 +151,31 @@ public function likeTweet(Request $request){
 
       $user -> save();
       return redirect('home');
-
-
-  }
+}
   public function editProfileDisplay(){
-          $currentUser = Auth:: User();
-          $currentUserId = $currentUser->id;
-          $user = new User();
-          $user = $user->find($currentUserId);
+      $currentUser = Auth:: User();
+      $currentUserId = $currentUser->id;
+      $user = new User();
+      $user = $user->find($currentUserId);
 
-          return view('editUserProfile',compact('user'));
+       return view('editUserProfile',compact('user'));
       }
-      public function getAllTweets(){
-                $tweets =  Tweet::get();
-                return new TweetResource($tweets);
+  public function getAllTweets(){
+        $tweets =  Tweet::get();
+        return new TweetResource($tweets);
         }
-        public function getAllComments(){
-                $comments =  Comments::get();
-                return new CommentsResource($comments);
+
+    public function getAllComments(){
+        $comments =  Comments::get();
+        return new CommentsResource($comments);
         }
-        public function getAllTweetLikes(){
-                $tweetLikes =  Tweetlike::get();
-                return new TweetlikeResource($tweetLikes);
+    public function getAllTweetLikes(){
+        $tweetLikes =  Tweetlike::get();
+        return new TweetlikeResource($tweetLikes);
         }
+
+        public function getAllTweetsByNumber($number){
+            $tweets =  Tweet::limit($number)->get();
+            return new TweetResource($tweets);
+            }
 }

@@ -21,4 +21,10 @@ Route::get('/users', "UsersController@getAllUsers");
 // Route::post('/tweets', "PostsController@getAllTweets");
 Route::get('/tweets', "PostsController@getAllTweets");
 Route::get('/comments', 'PostsController@getAllComments');
+
+
+
+Route::get('/tweetsbynumber/{number}', 'PostsController@getAllTweetsByNumber');
+
+
 Route::get('/tweet-likes', 'PostsController@getAllTweetLikes');
