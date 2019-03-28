@@ -23,6 +23,8 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
+        "animejs": "^3.0.1",
+        "gulp": "^4.0.0",
         "typed.js": "^2.0.10"
     }
 }
