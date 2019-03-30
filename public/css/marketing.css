@@ -1,13 +1,2 @@
-.heading-box h2{ width:100%; color: red; }
-.text-box {
-	position: absolute;
-	top: 65%;
-	left: 15%;
-	right: 15%;
-	color: black;
-font-style: italic;
-    font-weight:normal;
-    font-size: 30px;
-	text-align: center;
-	transform: translateY(-50%);
-}
+h1 {
+  font-size: 12px; }

@@ -161,7 +161,7 @@ public function likeTweet(Request $request){
        return view('editUserProfile',compact('user'));
       }
   public function getAllTweets(){
-        $tweets =  Tweet::get();
+        $tweets =  Tweet::limit(10)->get();
         return new TweetResource($tweets);
         }
 
