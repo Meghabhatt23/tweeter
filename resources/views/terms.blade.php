@@ -8,36 +8,38 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>terms</title>
 </head>
-
-<!------ Include the above in your HEAD tag ---------->
 <body>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="has-animation animation-ltr" data-delay="10" style="text-align:center;">
+  <p class="bigger" style="text-align:center;"> Why Tweeter? </p>
+</div>
+
 <br>
-<div class="has-animation animation-ltr" data-delay="10">
-  <p class="bigger">Tweeter </p>
-</div>
-<br /><br />
+<br>
 
-<div class="has-animation animation-rtl" data-delay="1000">
-  <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
+<div class="auto-container">
+			<div class="row">
+				<div class="column col-lg-6 col-md-12 col-sm-12">
+					<div class="sec-title">
+						<h2>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h2>
+					</div>
+				</div>
+			</div>
+		</div>	
+<br>
+<br>
 
-
+<br>
+<br>
 <div class="has-animation animation-rtl" data-delay="2000">
   <img src="https://placeimg.com/640/480/nature" width="600" />
 </div>
 
-
-<div class="container">
-	<div class="row">
-<h2><div data-splitting>perviewpay</div></h2>
-	</div>
-</div>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-<script type="text/javascript" src="{{ URL::asset('js/terms.js')}}"></script>
-
+        <script type="text/javascript" src="{{ URL::asset('js/terms.js')}}"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        
+
         <link rel="stylesheet" href="{{ URL::asset('css/marketing.css')}}" rel="stylesheet">
         <title></title>
     </head>
@@ -100,7 +100,9 @@
 
 </section>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 <script type="text/javascript" src="{{ URL::asset('js/myjs.js')}}"></script>
 
     </body>
