@@ -11,4 +11,4 @@ gulp.task('watch', function(){
 gulp.watch('resources/scss/*.scss', ['scss']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', '']);

@@ -1,16 +1,10 @@
-.text-box {
-  position: absolute;
-  top: 50%;
-  top: 65%;
-  left: 15%;
-  right: 15%;
-  color: #fff;
-  color: black;
-  font-style: italic;
-  font-weight: normal;
-  font-size: 20px;
-  text-align: center;
-  transform: translateY(-50%); }
+body {
+  font-family: 'Montserrat', sans-serif;
+  text-align: center; }
+
+div {
+  display: inline-block;
+  text-align: center; }
 
 .bigger {
   margin: 0;

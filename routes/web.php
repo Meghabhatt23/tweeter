@@ -26,6 +26,9 @@ Route::get('mosa-profile', function () {
 Route::get('marketing', function () {
     return view('marketing');
 });
+Route::get('terms', function () {
+    return view('terms');
+});
 Route::get('brittany-profile', function () {
     return view('brittany-profile');
 });
