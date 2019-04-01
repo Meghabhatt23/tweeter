@@ -29,6 +29,23 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 
-const app = new Vue({
-    el: '#app'
-});
+const test = new Vue({
+    el: "#tweetesWrapper",
+    data(){
+        return{
+            tweets:[]
+        }
+    },
+    methods:{
+        initialTweets(){
+            axios.get("/api/tweetsbynumber/10")
+            .then((response)) => {
+                this.tweets = response.data.data
+            });
+        }
+    }
+},
+    mounted(){
+        this.initialTweets();
+    }
+})
