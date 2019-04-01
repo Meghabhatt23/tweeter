@@ -1,23 +1,31 @@
+
+
 body {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
-
 }
 
-// div {
-//   display: inline-block;
-//   text-align: center;
-// }
+
+.text-box {
+    position: absolute;
+	top: 50%;
+	left: 15%;
+	right: 15%;
+	color: black;
+    font-size: 20px;
+	text-align: center;
+	transform: translateY(-50%);
+}
 
 .bigger {
   margin: 0px;
-  background:black url(https://media.giphy.com/media/jut7ta6lQwRkQ/giphy.gif) 100% 100% repeat;
+  background:url(https://media.giphy.com/media/jut7ta6lQwRkQ/giphy.gif) 100% 100% repeat;
   font-size: 60px;
   font-weight: 800;
   padding: 20px;
   text-transform: uppercase;
-  color: blue   ;
-  // display: inline-block;
+  font-family: serif;
+  color: #8b1165;
   position: relative;
   text-align: center;
 }
@@ -37,7 +45,7 @@ body {
 }
 
 .has-animation {
-  position:relative;
+  position: relative;
 }
 .has-animation p, .has-animation img {
   opacity: 0;
@@ -100,102 +108,6 @@ body {
     width: 0;
     left: 100%;
   }
-}
-
-
-
-h2{
-  width: 80%;
-  text-align: center;
-  font-size: inherit;
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-[class^=char]{
-  display: inline-block !important;
-  position: relative;
-  text-align: center;
-  font-weight: bold;
-}
-.auto-container{
-	position:static;
-	max-width:1200px;
-	padding:0px 15px;
-	margin:0 auto;
-}
-
-.sec-title{
-	position:relative;
-	margin-bottom:45px;
-}
-
-.sec-title .title{
-	position: relative;
-    color: #84858a;
-    font-size: 16px;
-    letter-spacing: 1px;
-    font-weight: 600;
-    padding-top: 30px;
-    margin-bottom: 10px;
-    text-transform: capitalize;
-}
-
-.sec-title .title:before{
-    position: absolute;
-    content: '';
-    left: 0px;
-    top: 0px;
-    width: 6px;
-    height: 6px;
-    background-color: #f43737;
-}
-
-.sec-title h2{
-    position: relative;
-    color: #242f6c;
-    font-weight: 700;
-    line-height: 1.2em;
-    text-transform: capitalize;
-	-webkit-mask-image: linear-gradient(-75deg, rgba(244,55,55,0.6) 50%, #f43737 50%, rgba(0,0,0,1) 70%);
-    -webkit-mask-size: 200%;
-    animation: shine 2s infinite;
-}
-
-@-webkit-keyframes shine {
-  from {
-    -webkit-mask-position: 150%;
-  }
-
-  to {
-    -webkit-mask-position: -50%;
-  }
-}
-
-.sec-title.centered{
-	text-align: center;
-}
-
-.sec-title.centered .text{
-	max-width:580px;
-	margin:0 auto;
-}
-
-.sec-title .title.light::before{
-	background-color:#ffffff;
-}
-
-.sec-title.light .title,
-.sec-title.light h2,
-.sec-title.light .text{
-	color:#ffffff;
-}
-
-.sec-title.centered .title:before{
-	left:50%;
-	margin-left:-3px;
 }
 
 @keyframes textHidden {
