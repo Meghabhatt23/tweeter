@@ -159,34 +159,18 @@ footer {
   cursor: pointer;
   padding: 5px; }
 
+.likeUnlikeBtn {
+  display: none; }
+
+.displaying {
+  display: none; }
+
 .topnav .search-container button:hover {
   background: #ccc; }
 
 .tweets-display-text-area {
   width: 100%;
   background: #fff; }
-
-
-  #infinite-list {
-  /* We need to limit the height and show a scrollbar */
-  width: 200px;
-  height: 300px;
-  overflow: auto;
-
-  /* Optional, only to check that it works with margin/padding */
-  margin: 30px;
-  padding: 20px;
-  border: 10px solid black;
-}
-
-/* Optional eye candy below: */
-li {
-  padding: 10px;
-  list-style-type: none;
-}
-li:hover {
-  background: #ccc;
-}
 
 @media (min-width: 550px) {
   .gedf-main {

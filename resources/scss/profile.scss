@@ -35,7 +35,12 @@ body
   margin-right: 0px;
 }
 
-
+.likeUnlikeBtn{
+    display: none;
+}
+.displaying{
+    display: none;
+}
 @media (max-width:768px)
 {
 

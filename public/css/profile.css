@@ -28,6 +28,12 @@ body {
 .profile-userbuttons .btn:last-child {
   margin-right: 0px; }
 
+.likeUnlikeBtn {
+  display: none; }
+
+.displaying {
+  display: none; }
+
 @media (max-width: 768px) {
   .fb-profile-text > h1 {
     font-weight: 700;

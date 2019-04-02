@@ -67,10 +67,9 @@
                         {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />  --}}
                         <div class="align-right">
                             <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Tweet</button>
-
                         </div>
                     </form>
-                
+
                     </div>
                         <div id="tweetsWrapper">
                             {{-- @{{ title}} --}}
@@ -150,3 +149,8 @@
         </div>
 
     @endsection
+    <script>
+
+        currentLoggedInUserUserId = {{ $user->id }}
+
+    </script>

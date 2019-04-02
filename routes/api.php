@@ -27,4 +27,4 @@ Route::get('/tweetsbynumber', 'PostsController@getAllTweetsByNumber');
 Route::get('/tweetsbynumberfromstartpoint/{number}/{id}', 'PostsController@getAllTweetsByNumberFromStartPoint');
 
 
-Route::get('/tweet-likes', 'PostsController@likeTweetViaApi');
+Route::post('/tweet-likes', 'PostsController@likeTweetViaApi');

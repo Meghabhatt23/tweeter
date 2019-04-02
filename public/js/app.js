@@ -1810,18 +1810,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Tweet Component mounted.');
   },
+  data: function data() {
+    return {
+      tweets: [],
+      likeActive: true,
+      unlikeActive: false
+    };
+  },
   methods: {
     likeTweet: function likeTweet(tweetId) {
+      this.likeActive = false;
+      this.unlikeActive = true;
       axios.post('/api/tweet-likes', {
         tweet_id: tweetId,
         like: "1",
-        user_id: "10"
+        user_id: currentLoggedInUserUserId
       }).then(function (response) {
         console.log(response);
       }).catch(function (error) {
@@ -1829,10 +1836,12 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     unlikeTweet: function unlikeTweet(tweetId) {
-      axios.post('/api/tweet-unlikes', {
+      this.likeActive = true;
+      this.unlikeActive = false;
+      axios.post('/api/tweet-likes', {
         tweet_id: tweetId,
         like: "0",
-        user_id: "10"
+        user_id: currentLoggedInUserUserId
       }).then(function (response) {
         console.log(response);
       }).catch(function (error) {
@@ -36946,7 +36955,7 @@ var render = function() {
           "font-style": "italic"
         }
       },
-      [_vm._v("\n\n            " + _vm._s(_vm.tweet.tweets) + "\n\n    ")]
+      [_vm._v("\n            " + _vm._s(_vm.tweet.tweets) + "\n    ")]
     ),
     _vm._v(" "),
     _c("br"),
@@ -36962,7 +36971,8 @@ var render = function() {
     _c(
       "button",
       {
-        staticClass: "btn btn-sm",
+        staticClass: "btn btn-sm likeUnlikeBtn",
+        class: { displaying: _vm.likeActive },
         staticStyle: { "background-color": "#1da1f2", color: "white" },
         on: {
           click: function($event) {
@@ -36972,11 +36982,12 @@ var render = function() {
       },
       [_vm._v("like")]
     ),
-    _vm._v(" "),
+    _vm._v("   \n        "),
     _c(
       "button",
       {
-        staticClass: "btn btn-sm",
+        staticClass: "btn btn-sm likeUnlikeBtn",
+        class: { displaying: _vm.unlikeActive },
         staticStyle: { "background-color": "#1da1f2", color: "white" },
         on: {
           click: function($event) {
@@ -49139,30 +49150,30 @@ module.exports = function(module) {
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+* First we will load all of this project's JavaScript dependencies which
+* includes Vue and other libraries. It is a great starting point when
+* building robust, powerful web applications using Vue and Laravel.
+*/
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+* The following block of code may be used to automatically register your
+* Vue components. It will recursively scan this directory for the Vue
+* components and automatically register them with their "basename".
+*
+* Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+*/
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue").default);
 Vue.component('tweet-component', __webpack_require__(/*! ./components/TweetComponent.vue */ "./resources/js/components/TweetComponent.vue").default);
 /**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+* Next, we will create a fresh Vue application instance and attach it to
+* the page. Then, you may begin adding components to this application
+* or customize the JavaScript scaffolding to fit your unique needs.
+*/
 
 var test = new Vue({
   el: '#tweetsWrapper',
@@ -49177,7 +49188,7 @@ var test = new Vue({
     initialTweets: function initialTweets() {
       var _this = this;
 
-      axios.get("/api/tweetsbynumberfromstartpoint/66/9").then(function (response) {
+      axios.get("/api/tweetsbynumberfromstartpoint/3/").then(function (response) {
         _this.tweets = response.data.data;
         _this.lastTweetId = response.data.data[response.data.data.length - 1]["id"]; // console.log("this.lastTweetId");
       });
@@ -49188,7 +49199,7 @@ var test = new Vue({
       window.onscroll = function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 0.5) {
           if (new Date().getTime() > _this2.lastCallTime + 5000) {
-            axios.get("/api/tweetsbynumberfromstartpoint/65/7" + _this2.lastTweetId).then(function (response) {
+            axios.get("/api/tweetsbynumberfromstartpoint/2/" + _this2.lastTweetId).then(function (response) {
               var data = response.data.data;
 
               for (var i = 0; i < data.length; i++) {
