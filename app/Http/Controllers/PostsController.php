@@ -42,8 +42,6 @@ class PostsController extends Controller
      $tweets = $tweet->where('user_id',$user->id)->orderBy('created_at','desc')->get();
 
 
-
-
     // $tweet = Tweet::orderBy('created_at','desc')->get();
     $tweetCollection = array();
 
@@ -161,7 +159,7 @@ public function likeTweet(Request $request){
        return view('editUserProfile',compact('user'));
       }
   public function getAllTweets(){
-        $tweets =  Tweet::limit(10)->get();
+        $tweets =  Tweet::get();
         return new TweetResource($tweets);
         }
 
@@ -169,13 +167,30 @@ public function likeTweet(Request $request){
         $comments =  Comments::get();
         return new CommentsResource($comments);
         }
-    public function getAllTweetLikes(){
-        $tweetLikes =  Tweetlike::get();
-        return new TweetlikeResource($tweetLikes);
-        }
+    // public function getAllTweetLikes(){
+    //     $tweetLikes =  Tweetlike::get();
+    //     return new TweetlikeResource($tweetLikes);
+    //     }
 
     public function getAllTweetsByNumber($number){
         $tweets =  Tweet::limit($number)->get();
         return new TweetResource($tweets);
             }
+    public function getAllTweetsByNumberFromStartPoint($number,$id){
+        $tweets =  Tweet::limit($number)->where("id", "<", $id)->orderBy('id','DESC')->get();
+        return new TweetResource($tweets);
+    }
+    public function likeTweetViaApi(Request $request){
+         $user = new User();
+        $tweetLike = new Tweetlike;
+        $tweetLike ->user_id = $user->id;
+        $tweetLike ->tweet_id = $request->tweet_id;
+        $tweetLike ->like = $request->like;
+        if($tweetLike -> save()){
+            return '{"success": "1"}';
+      }
+      else{
+          return '{"success": "0"}';
+      }
+}
 }

@@ -28,44 +28,52 @@ Vue.component('tweet-component', require('./components/TweetComponent.vue').defa
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+ const test = new Vue({
+ el: '#tweetsWrapper',
+ data(){
+ return{
+ tweets: [],
+ lastTweetId: 0,
+ lastCallTime: 0
+ }
+ },
+ methods:{
+     initialTweets(){
+         axios.get("/api/tweetsbynumberfromstartpoint/66/9")
+         .then((response) => {
+             this.tweets = response.data.data;
+             this.lastTweetId = response.data.data[ ((response.data.data).length - 1)]["id"];
+             // console.log("this.lastTweetId");
+     });
 
+ },
+ scroll(){
 
-// const app = new Vue({
-//     el: '#app'
-// });
-const test = new Vue({
-    el: '#tweetsWrapper',
-    data() {
-        return{
-        tweets: [
-            {
-        id: 56,
-        user_id: 2,
-        tweets: "I'm afraid, sir' said Alice, who was peeping anxiously into its eyes by this time). 'Don't grunt,' said Alice; 'it's laid for a minute or two, it was getting very sleepy; 'and they all crowded round.",
-        created_at: "2019-03-28 17:55:42",
-        updated_at: "2019-03-28 17:55:42"
-        },
-        {
-        id: 57,
-        user_id: 2,
-        tweets: "I know I do!' said Alice more boldly: 'you know you're growing too.' 'Yes, but I can't see you?' She was a dead silence. 'It's a pun!' the King hastily said, and went on in the last few minutes she.",
-        created_at: "2019-03-28 17:55:42",
-        updated_at: "2019-03-28 17:55:42"
-        }
-        ]
-    }
-},
-methods:{
-    initialTweets(){
-        axios.get("/api/tweetsbynumber/10")
-        .then((response) => {
-            console.log(response);
+ window.onscroll = () =>{
+         if((window.innerHeight + window.scrollY) >=
+          (document.body.offsetHeight -0.5)){
+                if((new Date).getTime() > (this.lastCallTime + 5000)){
+         axios.get("/api/tweetsbynumberfromstartpoint/65/7" + this.lastTweetId)
+         .then( (response) => {
+         var data = response.data.data;
+
+         for (var i = 0; i < data.length; i++) {
+         this.tweets.push(data[i]);
+         this.lastTweetId = data[i]["id"];
+         console.log(this.lastTweetId);
+         }
+
     });
+    this.lastCallTime = (new Date).getTime();
 }
-},
-mounted(){
-    this.initialTweets();
+    }
+        };
+    }
+ },
 
-}
+ mounted(){
+ this.initialTweets();
+ this.scroll();
+ }
 
-});
+ });

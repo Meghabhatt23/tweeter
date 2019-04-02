@@ -1816,6 +1816,30 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     console.log('Tweet Component mounted.');
   },
+  methods: {
+    likeTweet: function likeTweet(tweetId) {
+      axios.post('/api/tweet-likes', {
+        tweet_id: tweetId,
+        like: "1",
+        user_id: "10"
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    unlikeTweet: function unlikeTweet(tweetId) {
+      axios.post('/api/tweet-unlikes', {
+        tweet_id: tweetId,
+        like: "0",
+        user_id: "10"
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  },
   props: ['tweet']
 });
 
@@ -36922,16 +36946,45 @@ var render = function() {
           "font-style": "italic"
         }
       },
-      [_vm._v("\n            " + _vm._s(_vm.tweet.tweets) + "\n\n        ")]
+      [_vm._v("\n\n            " + _vm._s(_vm.tweet.tweets) + "\n\n    ")]
     ),
     _vm._v(" "),
     _c("br"),
     _vm._v(
-      "\n\n    by -" +
+      "\n\n    by - " +
         _vm._s(_vm.tweet.user_id) +
         " @ " +
         _vm._s(_vm.tweet.created_at) +
-        "\n"
+        "\n    "
+    ),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-sm",
+        staticStyle: { "background-color": "#1da1f2", color: "white" },
+        on: {
+          click: function($event) {
+            return _vm.likeTweet(_vm.tweet.id)
+          }
+        }
+      },
+      [_vm._v("like")]
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-sm",
+        staticStyle: { "background-color": "#1da1f2", color: "white" },
+        on: {
+          click: function($event) {
+            return _vm.unlikeTweet(_vm.tweet.id)
+          }
+        }
+      },
+      [_vm._v("Unlike")]
     )
   ])
 }
@@ -49110,38 +49163,50 @@ Vue.component('tweet-component', __webpack_require__(/*! ./components/TweetCompo
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-// const app = new Vue({
-//     el: '#app'
-// });
 
 var test = new Vue({
   el: '#tweetsWrapper',
   data: function data() {
     return {
-      tweets: [{
-        id: 56,
-        user_id: 2,
-        tweets: "I'm afraid, sir' said Alice, who was peeping anxiously into its eyes by this time). 'Don't grunt,' said Alice; 'it's laid for a minute or two, it was getting very sleepy; 'and they all crowded round.",
-        created_at: "2019-03-28 17:55:42",
-        updated_at: "2019-03-28 17:55:42"
-      }, {
-        id: 57,
-        user_id: 2,
-        tweets: "I know I do!' said Alice more boldly: 'you know you're growing too.' 'Yes, but I can't see you?' She was a dead silence. 'It's a pun!' the King hastily said, and went on in the last few minutes she.",
-        created_at: "2019-03-28 17:55:42",
-        updated_at: "2019-03-28 17:55:42"
-      }]
+      tweets: [],
+      lastTweetId: 0,
+      lastCallTime: 0
     };
   },
   methods: {
     initialTweets: function initialTweets() {
-      axios.get("/api/tweetsbynumber/10").then(function (response) {
-        console.log(response);
+      var _this = this;
+
+      axios.get("/api/tweetsbynumberfromstartpoint/66/9").then(function (response) {
+        _this.tweets = response.data.data;
+        _this.lastTweetId = response.data.data[response.data.data.length - 1]["id"]; // console.log("this.lastTweetId");
       });
+    },
+    scroll: function scroll() {
+      var _this2 = this;
+
+      window.onscroll = function () {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 0.5) {
+          if (new Date().getTime() > _this2.lastCallTime + 5000) {
+            axios.get("/api/tweetsbynumberfromstartpoint/65/7" + _this2.lastTweetId).then(function (response) {
+              var data = response.data.data;
+
+              for (var i = 0; i < data.length; i++) {
+                _this2.tweets.push(data[i]);
+
+                _this2.lastTweetId = data[i]["id"];
+                console.log(_this2.lastTweetId);
+              }
+            });
+            _this2.lastCallTime = new Date().getTime();
+          }
+        }
+      };
     }
   },
   mounted: function mounted() {
     this.initialTweets();
+    this.scroll();
   }
 });
 

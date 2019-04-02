@@ -70,15 +70,7 @@
 
                         </div>
                     </form>
-                    <?php
-                    if(isset($tweets) && ($tweets!==null)){
-                        ?>
-                        @include('partials.showtweets')
-                        <?php
-                    }
-                    else{
-                        ?>
-                        <?php } ?>
+                
                     </div>
                         <div id="tweetsWrapper">
                             {{-- @{{ title}} --}}
