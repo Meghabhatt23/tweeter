@@ -7,7 +7,7 @@
 
         by - {{ tweet.user_id}} @ {{ tweet.created_at }}
         <br/>
-            <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color: #1da1f2; color:white;">like</button> &nbsp;&nbsp;
+            <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color: #1da1f2; color:white; display: none;">like</button> &nbsp;&nbsp;
             <button :class="{'displaying': unlikeActive}" class="btn btn-sm likeUnlikeBtn" @click="unlikeTweet(tweet.id)" style="background-color: #1da1f2; color:white;">Unlike</button>
     </div>
 </template>

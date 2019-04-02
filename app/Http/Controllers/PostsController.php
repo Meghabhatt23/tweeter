@@ -173,7 +173,7 @@ public function likeTweet(Request $request){
     //     }
 
     public function getAllTweetsByNumber($number){
-        $tweets =  Tweet::limit($number)->get();
+        $tweets =  Tweet::limit($number)->orderBy('id','DESC')->get();
         return new TweetResource($tweets);
             }
     public function getAllTweetsByNumberFromStartPoint($number,$id){

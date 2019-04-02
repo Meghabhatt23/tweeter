@@ -23,7 +23,7 @@ Route::get('/tweets', "PostsController@getAllTweets");
 Route::get('/comments', 'PostsController@getAllComments');
 
 
-Route::get('/tweetsbynumber', 'PostsController@getAllTweetsByNumber');
+Route::get('/tweetsbynumber/{number}', 'PostsController@getAllTweetsByNumber');
 Route::get('/tweetsbynumberfromstartpoint/{number}/{id}', 'PostsController@getAllTweetsByNumberFromStartPoint');
 
 

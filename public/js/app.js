@@ -36973,7 +36973,11 @@ var render = function() {
       {
         staticClass: "btn btn-sm likeUnlikeBtn",
         class: { displaying: _vm.likeActive },
-        staticStyle: { "background-color": "#1da1f2", color: "white" },
+        staticStyle: {
+          "background-color": "#1da1f2",
+          color: "white",
+          display: "none"
+        },
         on: {
           click: function($event) {
             return _vm.likeTweet(_vm.tweet.id)
@@ -49188,7 +49192,7 @@ var test = new Vue({
     initialTweets: function initialTweets() {
       var _this = this;
 
-      axios.get("/api/tweetsbynumberfromstartpoint/66/9").then(function (response) {
+      axios.get("/api/tweetsbynumber/5").then(function (response) {
         _this.tweets = response.data.data;
         _this.lastTweetId = response.data.data[response.data.data.length - 1]["id"]; // console.log("this.lastTweetId");
       });
@@ -49198,9 +49202,10 @@ var test = new Vue({
 
       window.onscroll = function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 0.5) {
-          if (new Date().getTime() > _this2.lastCallTime + 5000) {
-            axios.get("/api/tweetsbynumberfromstartpoint/65/7" + _this2.lastTweetId).then(function (response) {
+          if (new Date().getTime() > _this2.lastCallTime + 500) {
+            axios.get("/api/tweetsbynumberfromstartpoint/5/" + _this2.lastTweetId).then(function (response) {
               var data = response.data.data;
+              console.log(response);
 
               for (var i = 0; i < data.length; i++) {
                 _this2.tweets.push(data[i]);
