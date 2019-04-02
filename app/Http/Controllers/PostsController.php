@@ -167,24 +167,17 @@ public function likeTweet(Request $request){
         $comments =  Comments::get();
         return new CommentsResource($comments);
         }
-
+    // public function getAllTweetLikes(){
+    //     $tweetLikes =  Tweetlike::get();
+    //     return new TweetlikeResource($tweetLikes);
+    //     }
 
     public function getAllTweetsByNumber($number){
-        $tweets =  Tweet::limit($number)->orderBy('id','DESC')->get();
-        $tweetsExtended = [];
-         $tweetLike = new Tweetlike;
-        foreach ($tweets as $tweet) {
-            $tweetId = $tweet["id"];
-            $tweetLikes =  TweetLike::limit(1)->where("tweet_id","=",$tweetId)->orderBy('id','DESC')->get();
-            $tweet["liked_by_user"] = $tweetLikes[0]["like"];
-
-            $tweetsExtended = $tweets;
-
-        }
+        $tweets =  Tweet::limit($number)->get();
         return new TweetResource($tweets);
             }
     public function getAllTweetsByNumberFromStartPoint($number,$id){
-        $tweets =  Tweet::limit($number)->where("id","<",$id)->orderBy('id','DESC')->get();
+        $tweets =  Tweet::limit($number)->where("id", "<", $id)->orderBy('id','DESC')->get();
         return new TweetResource($tweets);
     }
     public function likeTweetViaApi(Request $request){

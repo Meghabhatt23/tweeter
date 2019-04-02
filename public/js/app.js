@@ -49188,7 +49188,7 @@ var test = new Vue({
     initialTweets: function initialTweets() {
       var _this = this;
 
-      axios.get("/api/tweetsbynumberfromstartpoint/3/").then(function (response) {
+      axios.get("/api/tweetsbynumberfromstartpoint/66/9").then(function (response) {
         _this.tweets = response.data.data;
         _this.lastTweetId = response.data.data[response.data.data.length - 1]["id"]; // console.log("this.lastTweetId");
       });
@@ -49199,7 +49199,7 @@ var test = new Vue({
       window.onscroll = function () {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 0.5) {
           if (new Date().getTime() > _this2.lastCallTime + 5000) {
-            axios.get("/api/tweetsbynumberfromstartpoint/2/" + _this2.lastTweetId).then(function (response) {
+            axios.get("/api/tweetsbynumberfromstartpoint/65/7" + _this2.lastTweetId).then(function (response) {
               var data = response.data.data;
 
               for (var i = 0; i < data.length; i++) {

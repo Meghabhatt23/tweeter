@@ -39,7 +39,7 @@ const test = new Vue({
     },
     methods:{
         initialTweets(){
-            axios.get("/api/tweetsbynumberfromstartpoint/3/")
+            axios.get("/api/tweetsbynumberfromstartpoint/66/9")
             .then((response) => {
                 this.tweets = response.data.data;
                 this.lastTweetId = response.data.data[ ((response.data.data).length - 1)]["id"];
@@ -53,7 +53,7 @@ const test = new Vue({
                 if((window.innerHeight + window.scrollY) >=
                 (document.body.offsetHeight -0.5)){
                     if((new Date).getTime() > (this.lastCallTime + 5000)){
-                        axios.get("/api/tweetsbynumberfromstartpoint/2/" + this.lastTweetId)
+                        axios.get("/api/tweetsbynumberfromstartpoint/65/7" + this.lastTweetId)
                         .then( (response) => {
                             var data = response.data.data;
 
