@@ -7,8 +7,8 @@
 
         by - {{ tweet.user_id}} @ {{ tweet.created_at }}
         <br/>
-            <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color: #1da1f2; color:white; display: none;">like</button> &nbsp;&nbsp;
-            <button :class="{'displaying': unlikeActive}" class="btn btn-sm likeUnlikeBtn" @click="unlikeTweet(tweet.id)" style="background-color: #1da1f2; color:white;">Unlike</button>
+            <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color:white; color:white; font-size:30px;"><i class="fa fa-heart" style="color:#2DB2F4;"></i></button> &nbsp;&nbsp;
+            <button :class="{'displaying': unlikeActive}" class="btn btn-sm likeUnlikeBtn" @click="unlikeTweet(tweet.id)" style="background-color: white; color:white;"><i class="fa fa-heart" style="color:red; font-size:30px;"></i></button>
     </div>
 </template>
 
@@ -58,7 +58,7 @@
         }
 },
         props:['tweet']
-    }
 
+    }
 
 </script>

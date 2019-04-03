@@ -163,7 +163,7 @@ footer {
   display: none; }
 
 .displaying {
-  display: none; }
+  display: inline-block; }
 
 .topnav .search-container button:hover {
   background: #ccc; }

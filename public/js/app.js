@@ -36974,9 +36974,9 @@ var render = function() {
         staticClass: "btn btn-sm likeUnlikeBtn",
         class: { displaying: _vm.likeActive },
         staticStyle: {
-          "background-color": "#1da1f2",
+          "background-color": "white",
           color: "white",
-          display: "none"
+          "font-size": "30px"
         },
         on: {
           click: function($event) {
@@ -36984,7 +36984,12 @@ var render = function() {
           }
         }
       },
-      [_vm._v("like")]
+      [
+        _c("i", {
+          staticClass: "fa fa-heart",
+          staticStyle: { color: "#2DB2F4" }
+        })
+      ]
     ),
     _vm._v("   \n        "),
     _c(
@@ -36992,14 +36997,19 @@ var render = function() {
       {
         staticClass: "btn btn-sm likeUnlikeBtn",
         class: { displaying: _vm.unlikeActive },
-        staticStyle: { "background-color": "#1da1f2", color: "white" },
+        staticStyle: { "background-color": "white", color: "white" },
         on: {
           click: function($event) {
             return _vm.unlikeTweet(_vm.tweet.id)
           }
         }
       },
-      [_vm._v("Unlike")]
+      [
+        _c("i", {
+          staticClass: "fa fa-heart",
+          staticStyle: { color: "red", "font-size": "30px" }
+        })
+      ]
     )
   ])
 }
