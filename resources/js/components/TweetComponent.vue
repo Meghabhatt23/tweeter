@@ -7,7 +7,7 @@
         </div>
         <br />
 
-        by - {{ tweet.user_id}} @ {{ tweet.created_at }}
+        by - {{ tweet.id}} @ {{ tweet.created_at }}
         <br/>
         <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color:white; color:white; font-size:30px;"><i class="fa fa-heart" style="color:#2DB2F4;"></i></button> &nbsp;&nbsp;
         <button :class="{'displaying': unlikeActive}" class="btn btn-sm likeUnlikeBtn" @click="unlikeTweet(tweet.id)" style="background-color: white; color:white;"><i class="fa fa-heart" style="color:red; font-size:30px;"></i></button>
@@ -33,7 +33,6 @@ export default {
     },
     data() {
         return{
-            tweets: [],
             likeActive: true,
             unlikeActive: false,
             newComment: ""
@@ -41,21 +40,24 @@ export default {
     },
     methods:{
         makeComment(){
-        // alert(this.tweetId);
+        // alert(this.tweet.id);
         console.log(this.tweet);
         axios.post('/api/new-comment',{
-
-            tweet_id: this.tweetId,
+            tweet_id: this.tweet.id,
             user_id: currentLoggedInUserUserId,
-            comments:this.newComment
+            comment:this.newComment
         })
         .then(function (response) {
+
+
             console.log(response);
         })
         .catch(function (error){
             console.log(error);
         });
 
+
+      location.reload();
     },
 
         likeTweet(tweetId){

@@ -44,6 +44,7 @@ const test = new Vue({
             axios.get("/api/tweetsbynumber/5")
             .then((response) => {
                 this.tweets = response.data.data;
+
                 this.lastTweetId = response.data.data[ ((response.data.data).length - 1)]["id"];
                 // console.log("this.lastTweetId");
             });

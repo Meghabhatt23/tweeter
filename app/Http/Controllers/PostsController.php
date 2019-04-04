@@ -184,7 +184,7 @@ class PostsController extends Controller
         $user = Auth::user();
         $user = new User();
         $tweetLike = new Tweetlike;
-        // $tweetLike ->user_id = $user->id;
+
         $tweetLike ->user_id = $request->user_id;
         $tweetLike ->tweet_id = $request->tweet_id;
         $tweetLike ->like = $request->like;

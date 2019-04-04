@@ -1813,7 +1813,7 @@ __webpack_require__.r(__webpack_exports__);
     initialComments: function initialComments() {
       var _this = this;
 
-      axios.get("/api/tweet-comments/" + 99).then(function (response) {
+      axios.get("/api/tweet-comments/" + this.tweetId).then(function (response) {
         _this.comments = response.data.data;
       });
     }
@@ -1899,7 +1899,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      tweets: [],
       likeActive: true,
       unlikeActive: false,
       newComment: ""
@@ -1907,17 +1906,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     makeComment: function makeComment() {
-      alert(this.tweetId);
+      // alert(this.tweet.id);
       console.log(this.tweet);
       axios.post('/api/new-comment', {
-        tweet_id: this.tweetId,
+        tweet_id: this.tweet.id,
         user_id: currentLoggedInUserUserId,
-        comments: this.newComment
+        comment: this.newComment
       }).then(function (response) {
         console.log(response);
       }).catch(function (error) {
         console.log(error);
       });
+      location.reload();
     },
     likeTweet: function likeTweet(tweetId) {
       this.likeActive = false;
@@ -37141,7 +37141,7 @@ var render = function() {
       _c("br"),
       _vm._v(
         "\n\n    by - " +
-          _vm._s(_vm.tweet.user_id) +
+          _vm._s(_vm.tweet.id) +
           " @ " +
           _vm._s(_vm.tweet.created_at) +
           "\n    "
