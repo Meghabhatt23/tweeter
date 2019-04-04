@@ -197,7 +197,7 @@ class PostsController extends Controller
     }
     public function getTweetComments($tweetId){
         $comments = Comments::where("tweet_id","=",$tweetId)->get();
-        var_dump($comments);
+            return new CommentsResource($comments);
     }
 
 }
