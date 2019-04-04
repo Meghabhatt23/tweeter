@@ -180,3 +180,20 @@ public function likeTweet(Request $request){
         $tweets =  Tweet::limit($number)->where("id", "<", $id)->orderBy('id','DESC')->get();
         return new TweetResource($tweets);
     }
+    public function likeTweetViaApi(Request $request){
+        $user = Auth::user();
+         $user = new User();
+        $tweetLike = new Tweetlike;
+         // $tweetLike ->user_id = $user->id;
+        $tweetLike ->user_id = $request->user_id;
+        $tweetLike ->tweet_id = $request->tweet_id;
+        $tweetLike ->like = $request->like;
+        if ($tweetLike -> save()){
+            return '{"success": "1"}';
+      }
+      else{
+          return '{"success": "0"}';
+      }
+}
+
+}

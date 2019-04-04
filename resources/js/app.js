@@ -22,6 +22,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('tweet-component', require('./components/TweetComponent.vue').default);
+Vue.component('comment-component', require('./components/CommentComponent.vue').default);
 
 /**
 * Next, we will create a fresh Vue application instance and attach it to
