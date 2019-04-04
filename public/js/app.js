@@ -1893,15 +1893,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Tweet Component mounted.');
@@ -1910,10 +1901,24 @@ __webpack_require__.r(__webpack_exports__);
     return {
       tweets: [],
       likeActive: true,
-      unlikeActive: false
+      unlikeActive: false,
+      newComment: ""
     };
   },
   methods: {
+    makeComment: function makeComment() {
+      alert(this.tweetId);
+      console.log(this.tweet);
+      axios.post('/api/new-comment', {
+        tweet_id: this.tweetId,
+        user_id: currentLoggedInUserUserId,
+        comments: this.newComment
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
     likeTweet: function likeTweet(tweetId) {
       this.likeActive = false;
       this.unlikeActive = true;
@@ -37130,16 +37135,16 @@ var render = function() {
             "font-style": "italic"
           }
         },
-        [_vm._v("\n            " + _vm._s(_vm.tweet.tweets) + "\n\n    ")]
+        [_vm._v("\n        " + _vm._s(_vm.tweet.tweets) + "\n\n    ")]
       ),
       _vm._v(" "),
       _c("br"),
       _vm._v(
-        "\n\n        by - " +
+        "\n\n    by - " +
           _vm._s(_vm.tweet.user_id) +
           " @ " +
           _vm._s(_vm.tweet.created_at) +
-          "\n        "
+          "\n    "
       ),
       _c("br"),
       _vm._v(" "),
@@ -37166,7 +37171,7 @@ var render = function() {
           })
         ]
       ),
-      _vm._v("   \n        "),
+      _vm._v("   \n    "),
       _c(
         "button",
         {
@@ -37189,65 +37194,67 @@ var render = function() {
       _vm._v(" "),
       _c("comments-component", { attrs: { tweetId: _vm.tweet.id } }),
       _vm._v(" "),
-      _vm._m(0)
+      _c(
+        "div",
+        { staticClass: "row", staticStyle: { "text-align": "right" } },
+        [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.newComment,
+                expression: "newComment"
+              }
+            ],
+            staticClass: "form-control",
+            staticStyle: { "text-align": "right" },
+            attrs: { name: "comment", placeholder: "comment here" },
+            domProps: { value: _vm.newComment },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.newComment = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "tweet_id", value: " " }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "align-right",
+              staticStyle: { "text-align": "right" }
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-twitter btn-sm align-right",
+                  staticStyle: {
+                    "background-color": "#1da1f2",
+                    color: "white"
+                  },
+                  on: { click: _vm.makeComment }
+                },
+                [_vm._v("Comment")]
+              )
+            ]
+          )
+        ]
+      )
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "row", staticStyle: { "text-align": "right" } },
-      [
-        _c(
-          "form",
-          {
-            staticStyle: { "text-align": "right" },
-            attrs: { name: "comment-form", method: "post", action: "comments" }
-          },
-          [
-            _c("textarea", {
-              staticClass: "form-control",
-              staticStyle: { "text-align": "right" },
-              attrs: { name: "comment", placeholder: "comment here" }
-            }),
-            _vm._v(" "),
-            _c("br"),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "hidden", name: "tweet_id", value: " " }
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "align-right",
-                staticStyle: { "text-align": "right" }
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-twitter btn-sm align-right",
-                    staticStyle: {
-                      "background-color": "#1da1f2",
-                      color: "white"
-                    }
-                  },
-                  [_vm._v("Comment")]
-                )
-              ]
-            )
-          ]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

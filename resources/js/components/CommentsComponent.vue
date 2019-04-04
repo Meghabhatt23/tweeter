@@ -2,9 +2,9 @@
 
     <div class="comment" style="font-size: 20px; color:#3B3B54; font-weight:bold; font-style: italic; text-align:right;">
         <div class="comment-component" >
-               <!-- {{ this.comments }} -->
+            <!-- {{ this.comments }} -->
 
-               <comment-component v-for="comment in comments" :comment="comment"> </comment-component>
+            <comment-component v-for="comment in comments" :comment="comment"> </comment-component>
         </div>
     </div>
 </template>
@@ -24,14 +24,14 @@ export default {
     methods:{
         initialComments(){
 
-            axios.get("/api/tweet-comments/" + 99)
+            axios.get("/api/tweet-comments/" + this.tweetId)
             .then((response) => {
                 this.comments = response.data.data;
 
             });
 
-            }
-                },
-                props:['tweetId']
-            }
+        }
+    },
+    props:['tweetId']
+}
 </script>

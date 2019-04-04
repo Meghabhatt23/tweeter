@@ -4,35 +4,26 @@
         <div class="tweet-content" style="font-size: 20px; color:#3B3B54; font-weight:bold; font-style: italic;">
             {{ tweet.tweets }}
 
-    </div>
+        </div>
         <br />
 
         by - {{ tweet.user_id}} @ {{ tweet.created_at }}
         <br/>
         <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color:white; color:white; font-size:30px;"><i class="fa fa-heart" style="color:#2DB2F4;"></i></button> &nbsp;&nbsp;
         <button :class="{'displaying': unlikeActive}" class="btn btn-sm likeUnlikeBtn" @click="unlikeTweet(tweet.id)" style="background-color: white; color:white;"><i class="fa fa-heart" style="color:red; font-size:30px;"></i></button>
-        <comments-component :tweetId= "tweet.id"></comments-component>
+        <comments-component :tweetId  = "tweet.id"></comments-component>
 
         <div class="row" style="text-align:right;">
-            <!-- <div class="col-sm-6 col"> -->
-                <!-- <div class="container">
-                <img  class="profile-icon" src="images/bird.png" alt="profile" style="width:40px; height:40px;">
-            </div> -->
-            <!-- <div class="col-md-6" style="text-align:right"></div> -->
+            <textarea v-model="newComment" name="comment" class="form-control" placeholder="comment here" style="text-align:right"></textarea>
+            <br />
+            <input type="hidden" name="tweet_id" value=" " />
+            <div class="align-right" style="text-align:right">
+                <button @click="makeComment" class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Comment</button>
+            </div>
 
-
-            <form name="comment-form" method="post" action="comments" style="text-align:right;">
-
-                <textarea name="comment" class="form-control" placeholder="comment here" style="text-align:right"></textarea>
-                    <br />
-                <input type="hidden" name="tweet_id" value=" " />
-                <div class="align-right" style="text-align:right">
-                    <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Comment</button>
-                </div>
-            </form>
         </div>
     </div>
-</div>
+
 </template>
 
 <script>
@@ -44,10 +35,29 @@ export default {
         return{
             tweets: [],
             likeActive: true,
-            unlikeActive: false
-        }
+            unlikeActive: false,
+            newComment: ""
+      }
     },
     methods:{
+        makeComment(){
+        // alert(this.tweetId);
+        console.log(this.tweet);
+        axios.post('/api/new-comment',{
+
+            tweet_id: this.tweetId,
+            user_id: currentLoggedInUserUserId,
+            comments:this.newComment
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error){
+            console.log(error);
+        });
+
+    },
+
         likeTweet(tweetId){
             this.likeActive   = false;
             this.unlikeActive   = true;

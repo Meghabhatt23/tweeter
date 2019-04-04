@@ -199,5 +199,20 @@ class PostsController extends Controller
         $comments = Comments::where("tweet_id","=",$tweetId)->get();
             return new CommentsResource($comments);
     }
+    public function newCommentViaApi(Request $request){
 
+
+        $comment = new Comments;
+
+        $comment ->user_id = $request->user_id;
+        $comment ->tweet_id = $request->tweet_id;
+        $comment ->comments = $request->comment;
+        if($request->comment){
+          $comment -> save();
+             return '{"success": "1"}';
+        }
+        else{
+            return '{"success": "0"}';
+        }
+    }
 }
