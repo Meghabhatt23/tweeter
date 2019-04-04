@@ -21,9 +21,8 @@ Route::get('/users', "UsersController@getAllUsers");
 // Route::post('/tweets', "PostsController@getAllTweets");
 Route::get('/tweets', "PostsController@getAllTweets");
 
-// Route::post('/comment', 'PostsController@saveComment')->name('savecomment');
-// Route::get('/comments', 'PostsController@getAllComments');
-Route::post('/comments', 'PostsController@getAllComments');
+
+Route::get('/tweet-comments/{tweetId}', 'PostsController@getTweetComments');
 
 Route::get('/tweetsbynumber/{number}', 'PostsController@getAllTweetsByNumber');
 Route::get('/tweetsbynumberfromstartpoint/{number}/{id}', 'PostsController@getAllTweetsByNumberFromStartPoint');

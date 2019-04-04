@@ -1774,15 +1774,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
-    console.log('Comment Component mounted.');
+    this.initialComments();
+    console.log('comment Component mounted.');
   },
   data: function data() {
     return {
-      comment: []
+      comments: []
     };
   },
-  methods: {},
-  props: ['comment']
+  methods: {
+    initialComments: function initialComments() {
+      var _this = this;
+
+      // alert();
+      axios.get("/api/tweet-comments/500").then(function (response) {
+        _this.comments = response.data.data;
+        console.log("this.comments");
+      });
+    }
+  },
+  props: ['tweet_id']
 });
 
 /***/ }),
@@ -1829,6 +1840,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -36949,20 +36962,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "comment" }, [
-      _c("div", { staticClass: "comment-component" }, [
-        _vm._v("\n              This is megha's comment!\n    ")
-      ])
+  return _c("div", { staticClass: "comment" }, [
+    _c("div", { staticClass: "comment-component" }, [
+      _vm._v("\n           " + _vm._s(this.comments) + "\n    ")
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37027,144 +37033,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "tweet" },
-    [
-      _c(
-        "div",
-        {
-          staticClass: "tweet-content",
-          staticStyle: {
-            "font-size": "20px",
-            color: "#3B3B54",
-            "font-weight": "bold",
-            "font-style": "italic"
-          }
-        },
-        [_vm._v("\n            " + _vm._s(_vm.tweet.tweets) + "\n        ")]
-      ),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(
-        "\n\n        by - " +
-          _vm._s(_vm.tweet.user_id) +
-          " @ " +
-          _vm._s(_vm.tweet.created_at) +
-          "\n        "
-      ),
-      _c("br"),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-sm likeUnlikeBtn",
-          class: { displaying: _vm.likeActive },
-          staticStyle: {
-            "background-color": "white",
-            color: "white",
-            "font-size": "30px"
-          },
-          on: {
-            click: function($event) {
-              return _vm.likeTweet(_vm.tweet.id)
-            }
-          }
-        },
-        [
-          _c("i", {
-            staticClass: "fa fa-heart",
-            staticStyle: { color: "#2DB2F4" }
-          })
-        ]
-      ),
-      _vm._v("   \n        "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-sm likeUnlikeBtn",
-          class: { displaying: _vm.unlikeActive },
-          staticStyle: { "background-color": "white", color: "white" },
-          on: {
-            click: function($event) {
-              return _vm.unlikeTweet(_vm.tweet.id)
-            }
-          }
-        },
-        [
-          _c("i", {
-            staticClass: "fa fa-heart",
-            staticStyle: { color: "red", "font-size": "30px" }
-          })
-        ]
-      ),
-      _vm._v(" "),
-      _c("comment-component"),
-      _vm._v(" "),
-      _vm._m(0)
-    ],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-sm-6 col" }, [
-        _c("div", {
-          staticClass: "col-md-6",
-          staticStyle: { "text-align": "right" }
-        }),
-        _vm._v(" "),
-        _c(
-          "form",
-          {
-            attrs: { name: "comment-form", method: "post", action: "comments" }
-          },
-          [
-            _c("textarea", {
-              staticClass: "form-control",
-              staticStyle: { "text-align": "right" },
-              attrs: { name: "comment", placeholder: "comment here" }
-            }),
-            _vm._v(" "),
-            _c("input", {
-              attrs: { type: "hidden", name: "tweet_id", value: " " }
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "align-right",
-                staticStyle: { "text-align": "right" }
-              },
-              [
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-twitter btn-sm align-right",
-                    staticStyle: {
-                      "background-color": "#1da1f2",
-                      color: "white"
-                    }
-                  },
-                  [_vm._v("Comment")]
-                )
-              ]
-            )
-          ]
-        )
-      ])
-    ])
-  }
-]
-render._withStripped = true
+var render = function () {}
+var staticRenderFns = []
 
 
 

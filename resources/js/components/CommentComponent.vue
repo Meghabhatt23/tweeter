@@ -2,28 +2,35 @@
 
     <div class="comment">
         <div class="comment-component">
-              This is megha's comment!
+               {{ this.comments }}
+        </div>
     </div>
-</div>
 </template>
 
 <script>
 export default {
     mounted() {
-        console.log('Comment Component mounted.')
+        this.initialComments();
+        console.log('comment Component mounted.')
     },
     data() {
         return{
-            comment: [],
-
+            comments: [],
         }
     },
     methods:{
+        initialComments(){
+            // alert();
+            axios.get("/api/tweet-comments/500")
+            .then((response) => {
+                this.comments = response.data.data;
+                console.log("this.comments");
+            });
 
-    },
+            }
+                },
 
-    props:['comment']
+                props:['tweet_id']
 
-}
-
+            }
 </script>
