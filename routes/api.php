@@ -20,11 +20,13 @@ Route::get('/users', "UsersController@getAllUsers");
 
 // Route::post('/tweets', "PostsController@getAllTweets");
 Route::get('/tweets', "PostsController@getAllTweets");
-Route::get('/comments', 'PostsController@getAllComments');
 
 
+Route::get('/tweet-comments/{tweetId}', 'PostsController@getTweetComments');
 
 Route::get('/tweetsbynumber/{number}', 'PostsController@getAllTweetsByNumber');
+Route::get('/tweetsbynumberfromstartpoint/{number}/{id}', 'PostsController@getAllTweetsByNumberFromStartPoint');
 
 
-Route::get('/tweet-likes', 'PostsController@getAllTweetLikes');
+Route::post('/tweet-likes', 'PostsController@likeTweetViaApi');
+Route::post('/new-comment', 'PostsController@newCommentViaApi');

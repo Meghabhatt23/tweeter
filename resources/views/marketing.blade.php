@@ -20,9 +20,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
 <div class="container">
+
     <div class="has-animation animation-ltr" data-delay="10">
       <p class="bigger">7 Reasons Why You Should Be Using Tweeter!  </p>
     </div>
+
+	<h2 id="header"></h2>
+
 </div>
 <section>
     <div id="slider-animation" class="carousel slide" data-ride="carousel">

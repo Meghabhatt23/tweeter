@@ -43,7 +43,7 @@ Route::get('rachel-profile', function () {
 });
 
 
-Route::get('/home', 'PostsController@index')->name('homepage');
+Route::get('/home', 'PostsController@index')->name('homepage')->middleware("auth");
 Route::post('/home', 'PostsController@namehomepage');
 Route::get('/user/{id}', 'UsersController@index')->name('user');
 

@@ -10,6 +10,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('../css/tweeter.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!------ Include the above in your HEAD tag ---------->
 
@@ -67,20 +68,14 @@
                         {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />  --}}
                         <div class="align-right">
                             <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Tweet</button>
-
                         </div>
                     </form>
-                    <?php
-                    if(isset($tweets) && ($tweets!==null)){
-                        ?>
-                        @include('partials.showtweets')
-                        <?php
-                    }
-                    else{
-                        ?>
-                        <?php } ?>
-                    </div>
 
+                    </div>
+                        <div id="tweetsWrapper">
+
+                            <tweet-component v-for="tweet in tweets" :tweet=tweet>  </tweet-component>
+                        </div>
                 </div>
 
                 <div class="col-md-3">
@@ -155,3 +150,8 @@
         </div>
 
     @endsection
+    <script>
+
+        currentLoggedInUserUserId = {{ $user->id }}
+
+    </script>

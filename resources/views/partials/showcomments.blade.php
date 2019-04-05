@@ -17,14 +17,18 @@
         <br />
         <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />
         <div class="align-right" style="text-align:right">
-            <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Post</button>
+            <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Post Comment</button>
         </div>
     </form>
-<br />
+    {{-- <div id="commentsWrapper">
+        {{-- @{{ title}} --}}
+        {{-- <comment-component v-for="comment in comments" :comment=comment>  </comment-component> --}}
+    {{-- </div> --}}
+{{-- <br />  --}}
     @foreach($tweet->comments as $comment)
         <a href="/delete/{{ $comment->id}}">
             <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;"> Delete </button>
-        
+
             <br>
             <a href="/edit-comment/ {{ $comment->id }}" class="float-right-section">Edit</a>
         </a>

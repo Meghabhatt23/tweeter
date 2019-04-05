@@ -159,6 +159,12 @@ footer {
   cursor: pointer;
   padding: 5px; }
 
+.likeUnlikeBtn {
+  display: none; }
+
+.displaying {
+  display: inline-block; }
+
 .topnav .search-container button:hover {
   background: #ccc; }
 

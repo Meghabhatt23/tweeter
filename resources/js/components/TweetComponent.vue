@@ -1,11 +1,8 @@
 <template>
     <div class="tweet">
+
         <div class="tweet-content" style="font-size: 20px; color:#3B3B54; font-weight:bold; font-style: italic;">
-            <!-- {{ $tweet->tweets }} -->
-                {{ tweet.tweets }}
-
-            <!-- This is a tweet -->
-
+            {{ tweet.tweets }}
 
         </div>
         <br />
