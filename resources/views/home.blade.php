@@ -73,7 +73,7 @@
 
                     </div>
                         <div id="tweetsWrapper">
-
+                            {{-- @{{ title}} --}}
                             <tweet-component v-for="tweet in tweets" :tweet=tweet>  </tweet-component>
                         </div>
                 </div>

@@ -1878,9 +1878,73 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Tweet Component mounted.');
+  },
+  data: function data() {
+    return {
+      likeActive: true,
+      unlikeActive: false,
+      newComment: ""
+    };
+  },
+  methods: {
+    makeComment: function makeComment() {
+      // alert(this.tweet.id);
+      console.log(this.tweet);
+      axios.post('/api/new-comment', {
+        tweet_id: this.tweet.id,
+        user_id: currentLoggedInUserUserId,
+        comment: this.newComment
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+      location.reload();
+    },
+    likeTweet: function likeTweet(tweetId) {
+      this.likeActive = false;
+      this.unlikeActive = true;
+      axios.post('/api/tweet-likes', {
+        tweet_id: tweetId,
+        like: "1",
+        user_id: currentLoggedInUserUserId
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    unlikeTweet: function unlikeTweet(tweetId) {
+      this.likeActive = true;
+      this.unlikeActive = false;
+      axios.post('/api/tweet-likes', {
+        tweet_id: tweetId,
+        like: "0",
+        user_id: currentLoggedInUserUserId
+      }).then(function (response) {
+        console.log(response);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
   },
   props: ['tweet']
 });
@@ -37056,30 +37120,139 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tweet" }, [
-    _c(
-      "div",
-      {
-        staticClass: "tweet-content",
-        staticStyle: {
-          "font-size": "20px",
-          color: "#3B3B54",
-          "font-weight": "bold",
-          "font-style": "italic"
-        }
-      },
-      [_vm._v("\n        " + _vm._s(_vm.tweet.tweets) + "\n\n    ")]
-    ),
-    _vm._v(" "),
-    _c("br"),
-    _vm._v(
-      "\n\n    by -" +
-        _vm._s(_vm.tweet.user_id) +
-        " @ " +
-        _vm._s(_vm.tweet.created_at) +
-        "\n"
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "tweet" },
+    [
+      _c(
+        "div",
+        {
+          staticClass: "tweet-content",
+          staticStyle: {
+            "font-size": "20px",
+            color: "#3B3B54",
+            "font-weight": "bold",
+            "font-style": "italic"
+          }
+        },
+        [_vm._v("\n        " + _vm._s(_vm.tweet.tweets) + "\n\n    ")]
+      ),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(
+        "\n\n    by - " +
+          _vm._s(_vm.tweet.id) +
+          " @ " +
+          _vm._s(_vm.tweet.created_at) +
+          "\n    "
+      ),
+      _c("br"),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-sm likeUnlikeBtn",
+          class: { displaying: _vm.likeActive },
+          staticStyle: {
+            "background-color": "white",
+            color: "white",
+            "font-size": "30px"
+          },
+          on: {
+            click: function($event) {
+              return _vm.likeTweet(_vm.tweet.id)
+            }
+          }
+        },
+        [
+          _c("i", {
+            staticClass: "fa fa-heart",
+            staticStyle: { color: "#2DB2F4" }
+          })
+        ]
+      ),
+      _vm._v("   \n    "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-sm likeUnlikeBtn",
+          class: { displaying: _vm.unlikeActive },
+          staticStyle: { "background-color": "white", color: "white" },
+          on: {
+            click: function($event) {
+              return _vm.unlikeTweet(_vm.tweet.id)
+            }
+          }
+        },
+        [
+          _c("i", {
+            staticClass: "fa fa-heart",
+            staticStyle: { color: "red", "font-size": "30px" }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      _c("comments-component", { attrs: { tweetId: _vm.tweet.id } }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row", staticStyle: { "text-align": "right" } },
+        [
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.newComment,
+                expression: "newComment"
+              }
+            ],
+            staticClass: "form-control",
+            staticStyle: { "text-align": "right" },
+            attrs: { name: "comment", placeholder: "comment here" },
+            domProps: { value: _vm.newComment },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.newComment = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "hidden", name: "tweet_id", value: " " }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "align-right",
+              staticStyle: { "text-align": "right" }
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-twitter btn-sm align-right",
+                  staticStyle: {
+                    "background-color": "#1da1f2",
+                    color: "white"
+                  },
+                  on: { click: _vm.makeComment }
+                },
+                [_vm._v("Comment")]
+              )
+            ]
+          )
+        ]
+      )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -49370,14 +49543,15 @@ if (token) {
 /*!******************************************************!*\
   !*** ./resources/js/components/CommentComponent.vue ***!
   \******************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CommentComponent_vue_vue_type_template_id_d6b6866e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CommentComponent.vue?vue&type=template&id=d6b6866e& */ "./resources/js/components/CommentComponent.vue?vue&type=template&id=d6b6866e&");
 /* harmony import */ var _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CommentComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CommentComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49407,7 +49581,7 @@ component.options.__file = "resources/js/components/CommentComponent.vue"
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/CommentComponent.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
