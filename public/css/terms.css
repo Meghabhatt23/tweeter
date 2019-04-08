@@ -289,8 +289,8 @@ p{
 #pop-up{
     transform-origin: 10px 10px;
     top: -400px;
-    animation: drop 0.20s ease forwards,
-                swing 20s 20s ease forwards;
+    animation: drop 0.15s ease forwards,
+                swing 15s 15s ease forwards;
 }
 @keyframes drop{
     0%{opacity: 0;}
