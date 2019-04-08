@@ -28,7 +28,5 @@
             <br>
             <a href="/edit-comment/ {{ $comment->id }}" class="float-right-section">Edit</a>
         </a>
-
     @endforeach
-
 </div>

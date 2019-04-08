@@ -48,27 +48,23 @@ const test = new Vue({
                 this.lastTweetId = response.data.data[ ((response.data.data).length - 1)]["id"];
                 // console.log("this.lastTweetId");
             });
-
         },
         scroll(){
-
             window.onscroll = () =>{
                 if((window.innerHeight + window.scrollY) >=
                 (document.body.offsetHeight -0.5)){
                     if((new Date).getTime() > (this.lastCallTime + 500)){
 
-
                         axios.get("/api/tweetsbynumberfromstartpoint/5/" + this.lastTweetId)
                         .then( (response) => {
                             var data = response.data.data;
 
-                                console.log( response);
+                            console.log( response);
                             for (var i = 0; i < data.length; i++) {
                                 this.tweets.push(data[i]);
                                 this.lastTweetId = data[i]["id"];
                                 console.log(this.lastTweetId);
                             }
-
                         });
                         this.lastCallTime = (new Date).getTime();
                     }
@@ -81,5 +77,4 @@ const test = new Vue({
         this.initialTweets();
         this.scroll();
     }
-
 });
