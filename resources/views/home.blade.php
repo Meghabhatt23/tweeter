@@ -24,7 +24,6 @@
 
     <div class="container-fluid gedf-wrapper">
         <div class="row">
-
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
@@ -52,11 +51,9 @@
             </div>
 
             <div class="col-md-6 gedf-main">
-
                 <div class="tab-content" id="myTabContent">
                     <form name="tweet-form" method="post" action="tweet">
                         @csrf
-
                         <textarea name="tweet" class="form-control" placeholder="what's happening?" style="font-size: 20px;" ></textarea>
                         <br />
                         {{-- <input type="hidden" name="tweet_id" value="{{ $tweet->id }}" />  --}}
@@ -64,8 +61,8 @@
                             <button class="btn btn-twitter btn align-right" style="background-color: #1da1f2; color:white;">Tweet</button>
                         </div>
                     </form>
-
                 </div>
+
                 <div id="tweetsWrapper">
                     <tweet-component v-for="tweet in tweets" :tweet=tweet>  </tweet-component>
                 </div>
@@ -138,11 +135,8 @@
                 </div>
 
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 @endsection
