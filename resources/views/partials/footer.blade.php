@@ -7,7 +7,7 @@
             <li>Blog</li>
             <li>Status</li>
             {{-- <li>Jobs</li> --}}
-            <a href="terms">Terms</a>
+            <a href="terms">About</a>
             <li>Privacy Policy</li>
             <li>Cookies</li>
             <li>Apps</li>

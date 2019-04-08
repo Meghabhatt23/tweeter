@@ -3,20 +3,16 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ URL::asset('css/terms.css')}}" rel="stylesheet">
-
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
-    {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
-    {{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> --}}
-    {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"> --}}
-     {{-- <link rel="stylesheet" href="animate.min.css"> --}}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Marketing</title>
+
 </head>
 
-
-
 <body style=" background: url(http://www.ubuntu-ast.org/largeimages/107/1078179_black-gradient-wallpaper.jpg)100% 100% repeat;">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -30,9 +26,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
-
-
-
 
  <div class="has-animation animation-ltr" data-delay="10" style="text-align:center;">
   <p class="bigger" > 7 Reasons Why You Should Be Using Tweeter! </p>
@@ -129,45 +122,61 @@ Twitter was originally an internal service for employees of Odeo but entered int
 </section>
 <div id="services" class="container-fluid text-center" style="color:white;">
   <h2>SERVICES</h2>
-  <h4>What we offer</h4>
+  <h4>What Tweeter offers you</h4>
   <br>
   <div class="row slideanim">
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-off logo-small"></span>
       <h4>POWER</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>You have power to spread your good thoughts</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-heart logo-small"></span>
       <h4>LOVE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>You can spread Love and peace through this platform.</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-lock logo-small"></span>
       <h4>JOB DONE</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>You can find opportunity to get your job</p>
     </div>
   </div>
   <br><br>
   <div class="row slideanim">
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-leaf logo-small"></span>
-      <h4>GREEN</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <span class="glyphicon glyphicon-filter logo-small"></span>
+      <h4>filters</h4>
+      <p>You can filter your Information with the use of Tweeter.</p>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-certificate logo-small"></span>
       <h4>CERTIFIED</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <p>You can get verified by Tweeter</p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-wrench logo-small"></span>
-      <h4>HARD WORK</h4>
-      <p>Lorem ipsum dolor sit amet..</p>
+      <span class="glyphicon glyphicon-tasks logo-small"></span>
+      <h4>Tasks</h4>
+      <p>You can do multiple tasks using Tweeter and earn money too!</p>
     </div>
   </div>
 </div>
 
+<div class="pop-up">
+
+
+    <div id="pop-up">
+        <!-- <img src="images/cross.png"> -->
+
+        <div class="container">
+            <h1>YOU CAN SIGN UP HERE</h1>
+            <p> <strong>Join Now</strong> Enter your E-mail sign up now.</p>
+            <input type="email" placeholder="email" required>
+            <a href="/home" class="btn1">SEND</a>
+            <div class="cross" ><i class="fa fa-times" style="color: #fff;"></i></div>
+        </div>
+    </div>
+
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
