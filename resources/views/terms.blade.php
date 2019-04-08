@@ -173,10 +173,12 @@ Twitter was originally an internal service for employees of Odeo but entered int
             <input type="email" placeholder="email" required>
             <a href="/home" class="btn1">SEND</a>
             <div class="cross" ><i class="fa fa-times" style="color: #fff;"></i></div>
+
         </div>
     </div>
 
 </div>
+    <a href="/home" class="btn2"><i class="	glyphicon glyphicon-circle-arrow-left ">GO BACK</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

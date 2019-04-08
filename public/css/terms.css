@@ -259,6 +259,17 @@ p{
     border: 1px solid #333;
     font-size: 18px;
 }
+.btn2{
+    padding: 10px;
+    border: 0;
+    color: white;
+    background-color: #333;
+    margin-left: -5px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid #333;
+    font-size: 18px;
+    hover:red;
+}
 .cross{
 
     position: absolute;
