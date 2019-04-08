@@ -20,11 +20,7 @@
             <button class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Post Comment</button>
         </div>
     </form>
-    {{-- <div id="commentsWrapper">
-        {{-- @{{ title}} --}}
-        {{-- <comment-component v-for="comment in comments" :comment=comment>  </comment-component> --}}
-    {{-- </div> --}}
-{{-- <br />  --}}
+
     @foreach($tweet->comments as $comment)
         <a href="/delete/{{ $comment->id}}">
             <button class="btn btn-sm btn-twitter" style="background-color: #1da1f2; color:white;"> Delete </button>

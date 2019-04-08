@@ -212,7 +212,7 @@ class PostsController extends Controller
     }
     public function getTweetComments($tweetId){
         $comments = Comments::where("tweet_id","=",$tweetId)->get();
-            return new CommentsResource($comments);
+        return new CommentsResource($comments);
     }
     public function newCommentViaApi(Request $request){
 
@@ -223,8 +223,8 @@ class PostsController extends Controller
         $comment ->tweet_id = $request->tweet_id;
         $comment ->comments = $request->comment;
         if($request->comment){
-          $comment -> save();
-             return '{"success": "1"}';
+            $comment -> save();
+            return '{"success": "1"}';
         }
         else{
             return '{"success": "0"}';
