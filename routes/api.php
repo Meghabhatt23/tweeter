@@ -29,4 +29,6 @@ Route::get('/tweetsbynumberfromstartpoint/{number}/{id}', 'PostsController@getAl
 
 
 Route::post('/tweet-likes', 'PostsController@likeTweetViaApi');
+
+Route::post('/follow-user', 'PostsController@followUserViaApi');
 Route::post('/new-comment', 'PostsController@newCommentViaApi');

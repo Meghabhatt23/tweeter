@@ -1,11 +1,8 @@
-
-
 body {
   font-family: 'Montserrat', sans-serif;
   text-align: center;
+
 }
-
-
 .text-box {
     position: absolute;
 	top: 50%;
@@ -19,18 +16,20 @@ body {
 
 .bigger {
   margin: 0px;
-  background:url(https://media.giphy.com/media/jut7ta6lQwRkQ/giphy.gif) 100% 100% repeat;
+  background: url(https://media.giphy.com/media/jut7ta6lQwRkQ/giphy.gif) 100% 100% repeat;
   font-size: 60px;
   font-weight: 800;
   padding: 20px;
   text-transform: uppercase;
+  color: blue;
   font-family: serif;
   color: #8b1165;
   position: relative;
   text-align: center;
+font-size: 40px;
 }
-.text {
 
+.text {
   width: 100%;
   line-height: 24px;
   text-align: center;
@@ -43,7 +42,6 @@ body {
 .text a {
   color: #0fe4d2;
 }
-
 .has-animation {
   position: relative;
 }
@@ -80,7 +78,6 @@ body {
 .has-animation.animation-rtl.animate-in:after {
   animation: revealRTL 1s .6s ease;
 }
-
 @keyframes revealRTL {
   0% {
     width: 0;

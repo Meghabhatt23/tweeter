@@ -2,9 +2,11 @@
 
     <div class="comment" style="font-size: 20px; color:#3B3B54; font-weight:bold; font-style: italic; text-align:right;">
         <div class="comment-component" >
+            
             <!-- {{ this.comments }} -->
 
             <comment-component v-for="comment in comments" :comment="comment"> </comment-component>
+
         </div>
     </div>
 </template>

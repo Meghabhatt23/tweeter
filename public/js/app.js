@@ -1799,6 +1799,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.initialComments();
@@ -1865,6 +1867,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -36994,10 +36997,10 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", {}, [
-    _vm._v("\n" + _vm._s(_vm.comment.comments) + " "),
+    _vm._v("\n    " + _vm._s(_vm.comment.comments) + " "),
     _c("br"),
     _vm._v(
-      "\n  " +
+      "\n        " +
         _vm._s(_vm.comment.user_id) +
         " @ " +
         _vm._s(_vm.comment.created_at) +
@@ -37135,7 +37138,7 @@ var render = function() {
             "font-style": "italic"
           }
         },
-        [_vm._v("\n        " + _vm._s(_vm.tweet.tweets) + "\n\n    ")]
+        [_vm._v("\n        " + _vm._s(_vm.tweet.tweets) + "\n    ")]
       ),
       _vm._v(" "),
       _c("br"),
@@ -37222,32 +37225,27 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("br"),
+          _c("br"),
           _vm._v(" "),
           _c("input", {
             attrs: { type: "hidden", name: "tweet_id", value: " " }
           }),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "align-right",
-              staticStyle: { "text-align": "right" }
-            },
-            [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-twitter btn-sm align-right",
-                  staticStyle: {
-                    "background-color": "#1da1f2",
-                    color: "white"
-                  },
-                  on: { click: _vm.makeComment }
+          _c("div", { staticClass: "align-right" }, [
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-twitter btn-sm align-right",
+                staticStyle: {
+                  "background-color": "#1da1f2",
+                  color: "white",
+                  "text-align": "right"
                 },
-                [_vm._v("Comment")]
-              )
-            ]
-          )
+                on: { click: _vm.makeComment }
+              },
+              [_vm._v("Comment")]
+            )
+          ])
         ]
       )
     ],
@@ -49543,15 +49541,14 @@ if (token) {
 /*!******************************************************!*\
   !*** ./resources/js/components/CommentComponent.vue ***!
   \******************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CommentComponent_vue_vue_type_template_id_d6b6866e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CommentComponent.vue?vue&type=template&id=d6b6866e& */ "./resources/js/components/CommentComponent.vue?vue&type=template&id=d6b6866e&");
 /* harmony import */ var _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CommentComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/CommentComponent.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _CommentComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -49581,7 +49578,7 @@ component.options.__file = "resources/js/components/CommentComponent.vue"
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/CommentComponent.vue?vue&type=script&lang=js& ***!
   \*******************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

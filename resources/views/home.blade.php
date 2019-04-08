@@ -75,6 +75,7 @@
                         <div id="tweetsWrapper">
                             {{-- @{{ title}} --}}
                             <tweet-component v-for="tweet in tweets" :tweet=tweet>  </tweet-component>
+
                         </div>
                 </div>
 
@@ -90,8 +91,10 @@
                             <a href="mosa-profile" class="card-link">Mosa</a><br />
                             Instructor
                             <p class="card-text"></p>
-                            <a href="/user-follow @php{{$user->id }}@endphp"> Follow </a>
-                            <a href="/user-unfollow @php{{$user->id }}@endphp"> Unfollow </a>
+                            <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color:white; color:white; font-size:30px;"><i class="fa fa-heart" style="color:#2DB2F4;"></i></button> &nbsp;&nbsp;
+                            <button :class="{'displaying': unlikeActive}" class="btn btn-sm likeUnlikeBtn" @click="unlikeTweet(tweet.id)" style="background-color: white; color:white;"><i class="fa fa-heart" style="color:red; font-size:30px;"></i></button>
+
+
                         </div>
                     </div>
 
@@ -142,7 +145,79 @@
                             <p class="card-text"></p>
                             <button type="submit" class="btn btn-follow" style="background-color: #1da1f2; color:white;">Follow</button>
                         </div>
+                    </div><div class="col-md-3">
+                        <h4>People you may follow</h4>
+                        <div class="card gedf-card">
+                            <div class="card-body">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width=100 src="images/mosa.png" alt="">
+                                </div>
+
+
+                                <a href="mosa-profile" class="card-link">Mosa</a><br />
+                                Instructor
+                                <p class="card-text"></p>
+                                <button :class="{'displaying': likeActive}" class="btn btn-sm likeUnlikeBtn" @click="likeTweet(tweet.id)" style="background-color:white; color:white; font-size:30px;"><i class="fa fa-heart" style="color:#2DB2F4;"></i></button> &nbsp;&nbsp;
+                                <button :class="{'displaying': unlikeActive}" class="btn btn-sm likeUnlikeBtn" @click="unlikeTweet(tweet.id)" style="background-color: white; color:white;"><i class="fa fa-heart" style="color:red; font-size:30px;"></i></button>
+
+
+                            </div>
+                        </div>
+
+                        <div class="card gedf-card">
+                            <div class="card-body">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width=100 src="images/bushra.png" alt="">
+                                </div>
+                                <a href="bushra-profile" class="card-link">Bushra </a><br />
+                                Web- Designer
+                                <p class="card-text"></p>
+                                <button type="submit" class="btn btn-follow" style="background-color: #1da1f2; color:white;">Follow</button>
+                            </div>
+                        </div>
+
+                        <div class="card gedf-card">
+                            <div class="card-body">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width=100 src="images/brittany.png" alt="">
+                                </div>
+                                <a href="brittany-profile" class="card-link">Brittany</a><br />
+                                Back-end Developer
+                                <p class="card-text"></p>
+                                <button type="submit" class="btn btn-follow" style="background-color: #1da1f2; color:white;">Follow</button>
+                            </div>
+                        </div>
+
+                        <div class="card gedf-card">
+                            <div class="card-body">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width=100 src="images/rachel.png" alt="">
+                                </div>
+                                <a href="rachel-profile" class="card-link">Rachel</a><br />
+                                Frontend Developer
+                                <p class="card-text"></p>
+                                <button type="submit" class="btn btn-follow" style="background-color: #1da1f2; color:white;">Follow</button>
+
+                            </div>
+                        </div>
+
+                        <div class="card gedf-card">
+                            <div class="card-body">
+                                <div class="mr-2">
+                                    <img class="rounded-circle" width=100 src="images/jordon.png" alt="">
+                                </div>
+                                <a href="jordan-profile" class="card-link">Jordan</a><br />
+                                Frontend Developer
+                                <p class="card-text"></p>
+                                <button type="submit" class="btn btn-follow" style="background-color: #1da1f2; color:white;">Follow</button>
+                            </div>
+                        </div>
                     </div>
+
+                </div>
+
+            </div>
+
                 </div>
 
             </div>
@@ -153,5 +228,7 @@
     <script>
 
         currentLoggedInUserUserId = {{ $user->id }}
+
+
 
     </script>

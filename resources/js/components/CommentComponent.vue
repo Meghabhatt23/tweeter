@@ -1,7 +1,7 @@
 <template>
     <div class="">
-    {{comment.comments}} <br />
-      {{ comment.user_id }} @ {{ comment.created_at }}
+        {{comment.comments}} <br />
+            {{ comment.user_id }} @ {{ comment.created_at }}
      </div>
 </template>
 

@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Follower;
+
 use App\Tweet;
 use App\User;
 use Auth;
@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     public function index($id){
         $user = new User();
-        $profilefollowers = $users = $uset->get();
+        // $profilefollowers = $users = $uset->get();
         $user = $user->find($id);
 
         $tweet = new Tweet;

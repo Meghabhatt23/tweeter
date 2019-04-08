@@ -3,16 +3,22 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ URL::asset('css/terms.css')}}" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <title>terms</title>
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+    {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
+    {{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> --}}
+    {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"> --}}
+     {{-- <link rel="stylesheet" href="animate.min.css"> --}}
+    <title>Marketing</title>
 </head>
-<body>
 
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<body style=" background: url(http://www.ubuntu-ast.org/largeimages/107/1078179_black-gradient-wallpaper.jpg)100% 100% repeat;">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -27,19 +33,18 @@
 
 
 
-<div class="has-animation animation-ltr" data-delay="10" style="text-align:center;">
-  <p class="bigger" > Why Tweeter? </p>
+
+ <div class="has-animation animation-ltr" data-delay="10" style="text-align:center;">
+  <p class="bigger" > 7 Reasons Why You Should Be Using Tweeter! </p>
 </div>
 
 <br>
 
-
 <div class="has-animation animation-rtl" data-delay="1000">
-  <h5 class="text">Twitter has now been with us for seven years and counting, having celebrated its seventh birthday on March 21, 2013. This was seven years to the day since Jack Dorsey sent out the first tweet in 2006, at a time when the micro-blogging social network was known simply as twttr.
+  <h5 class="text" style="color:white; font-size:20px; font-style:normal;">Twitter has now been with us for seven years and counting, having celebrated its seventh birthday on March 21, 2013. This was seven years to the day since Jack Dorsey sent out the first tweet in 2006, at a time when the micro-blogging social network was known simply as twttr.
 
 Twitter was originally an internal service for employees of Odeo but entered into the public domain in July 2006. By 2007 early adopters and tech bloggers had started to use Twitter, and the service has grown every year since then. In 2009 it benefited from the Oprah Effect, hitting the mainstream in a big, bad way. Those who are interested can read Twitter’s full origin story.
 
-How Twitter Was Born.
 </h5>
 </div>
 <br>
@@ -61,8 +66,8 @@ How Twitter Was Born.
   <!-- The slideshow -->
   <div class="carousel-inner" style="margin-left:80px; margin-right:80px;">
     <div class="carousel-item active">
-      <img src="https://techcrunch.com/wp-content/uploads/2018/07/fake-twitter-accounts.png?w=730&crop=1"  style="width:90%;"alt="Los Angeles">
-        <div class="text-box">
+      <img src="https://cdn.vox-cdn.com/thumbor/vX94u2rAP1Eu0kvWJEWop8bMzhw=/0x0:1000x667/1200x800/filters:focal(420x254:580x414):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/58954649/mdoying_180117_2249_twitter_rocking.0.gif"  style="width:90%; height:70%;" alt="Los Angeles">
+        <div class="text-box" style="color:white; font-weight:bold;">
             <h2 class="wow slideInRight" data-wow-duration="2s">What is Tweeter?</h2>
             <p class="wow slideInLeft" data-wow-duration="2s">Twitter is an online news and social networking site where people communicate in short<br /> messages called tweets.Tweeting is posting short messages for anyone who follows you on Twitter,<br > with the hope that your messages are useful and interesting to someone in your audience </p>
         </div>
@@ -106,7 +111,7 @@ How Twitter Was Born.
     <div class="text-box"  style="color:black; font-weight:bold;">
             <h3 class="wow fadeInUp" data-wow-duration="2s">Creative Outlet</h3>
             <p class="wow fadeInUp" data-wow-duration="2s"> Be imaginative with themed tweets!You may want to parody a famous person, write short poetry, recount witty anecdotes, or tell lame jokes. Twitter gives you a certain sense of anonymity to plumb the depths of your creativity. </p>
-        </div>
+    </div>
     </div>
 
   </div>
@@ -122,12 +127,51 @@ How Twitter Was Born.
 </div>
 
 </section>
-
+<div id="services" class="container-fluid text-center" style="color:white;">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-off logo-small"></span>
+      <h4>POWER</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart logo-small"></span>
+      <h4>LOVE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock logo-small"></span>
+      <h4>JOB DONE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf logo-small"></span>
+      <h4>GREEN</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h4>CERTIFIED</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench logo-small"></span>
+      <h4>HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
-        <script type="text/javascript" src="{{ URL::asset('js/terms.js')}}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/terms.js')}}"></script>
 </body>
 </html>

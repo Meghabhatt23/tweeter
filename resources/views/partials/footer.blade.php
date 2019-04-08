@@ -12,7 +12,7 @@
             <li>Cookies</li>
             <li>Apps</li>
             <a href="marketing">Marketing</a>
-            <li>Advertise</li>
+            <a href="advertise">Advertise</a>
             <li>Developers</li>
             <li>Settings</li>
             <li>&copy<?php echo date("Y"); ?> Tweeter </li>

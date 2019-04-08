@@ -3,7 +3,6 @@
 
         <div class="tweet-content" style="font-size: 20px; color:#3B3B54; font-weight:bold; font-style: italic;">
             {{ tweet.tweets }}
-
         </div>
         <br />
 
@@ -15,14 +14,16 @@
 
         <div class="row" style="text-align:right;">
             <textarea v-model="newComment" name="comment" class="form-control" placeholder="comment here" style="text-align:right"></textarea>
-            <br />
+            <br /><br />
             <input type="hidden" name="tweet_id" value=" " />
-            <div class="align-right" style="text-align:right">
-                <button @click="makeComment" class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white;">Comment</button>
+            <div class="align-right">
+                <button @click="makeComment" class="btn btn-twitter btn-sm align-right" style="background-color: #1da1f2; color:white; text-align:right">Comment</button>
             </div>
 
         </div>
+        
     </div>
+
 
 </template>
 

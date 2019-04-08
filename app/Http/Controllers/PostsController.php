@@ -13,6 +13,7 @@ use Auth;
 use App\Http\Resources\Tweet as TweetResource;
 use App\Http\Resources\Comments as CommentsResource;
 use App\Http\Resources\Tweetlike as TweetlikeResource;
+use App\Http\Resources\Follower as FollowerResource;
 
 class PostsController extends Controller
 {
@@ -33,7 +34,7 @@ class PostsController extends Controller
     {
 
         $users = new User;
-        $profilefollowers = $users = $users->get();
+        $follower = $users = $users->get();
         $user = Auth::user();
         $tweet = new Tweet;
         $tweets = $tweet->get();
@@ -189,6 +190,20 @@ class PostsController extends Controller
         $tweetLike ->tweet_id = $request->tweet_id;
         $tweetLike ->like = $request->like;
         if ($tweetLike -> save()){
+            return '{"success": "1"}';
+        }
+        else{
+            return '{"success": "0"}';
+        }
+    }
+    public function followUserViaApi(){
+        $user = Auth::user();
+        $user = new User();
+        $follower= new FollowerResource;
+        $follower ->user_id = $request->user_id;
+        $follower ->follower_id = $request->follower_id;
+        $follower ->following = $request->following;
+        if ($follower -> save()){
             return '{"success": "1"}';
         }
         else{
